@@ -1,0 +1,28 @@
+# Ignorar archivos binarios generados por el compilador
+*.exe
+*.dll
+*.pdb
+
+# Ignorar archivos de configuración
+*.config
+*.settings
+
+# Ignorar archivos temporales generados por Visual Studio
+*.suo
+*.user
+
+# Ignorar archivos de caché generados por el compilador o el IDE
+*.obj
+*.cache
+
+# Ignorar archivos de registro generados por Visual Studio
+*.log
+
+# Ignorar la carpeta bin/
+bin/
+
+# Ignorar la carpeta obj/
+obj/
+
+# Ignorar el archivo .vs/
+.vs/
