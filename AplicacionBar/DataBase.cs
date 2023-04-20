@@ -12,7 +12,7 @@ namespace AplicacionBar
 {
     public class DataBase
     {
-        private SqlConnection connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=PruebaUsuarios;Data Source=DESKTOP-7VB377L\\SQLEXPRESS");
+        private SqlConnection connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=ProyectoBar;Data Source=DESKTOP-7VB377L\\SQLEXPRESS");
 
         //classiicaciones
         public List<Clasificacion> ClassGetAll()
@@ -31,8 +31,8 @@ namespace AplicacionBar
                     {
                         clasificaciones.Add(new Clasificacion
                         {
-                            id = int.Parse(reader["id"].ToString()),
-                            nombre = reader["nombre"].ToString(),
+                            id = Convert.ToInt32(reader["id"]),
+                            nombre = reader["nombre"].ToString()
                         });
                     }
 
@@ -176,9 +176,9 @@ namespace AplicacionBar
                 {
                     Productos.Add(new InterfaceProductos
                     {
-                        id = int.Parse(reader["id"].ToString()),
+                        id = Convert.ToInt32(reader["id"].ToString()),
                         nombre = reader["nombre"].ToString(),
-                        precio = float.Parse((string)reader["precio"]),
+                        precio = (float)Convert.ToDouble(reader["precio"].ToString()),
                         clasificacion = Convert.ToInt32(reader["clasificacion"]),
                     });
                 }
@@ -326,11 +326,11 @@ namespace AplicacionBar
 
             while (reader.Read())
             {
-                if(id == int.Parse(reader["id"].ToString()))
+                if(id == Convert.ToInt32(reader["id"]))
                 {
-                    mesa.id = Convert.ToInt32(reader["id"].ToString()),
-                    mesa.nombre = reader["nombre"].ToString(),
-                    mesa.productos_vendidos = reader["productos_vendidos"].ToString(
+                    mesa.id = Convert.ToInt32(reader["id"].ToString());
+                    mesa.nombre = reader["nombre"].ToString();
+                    mesa.productos_vendidos = reader["productos_vendidos"].ToString();
                     break;
                 }
             }

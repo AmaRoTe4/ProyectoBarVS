@@ -31,13 +31,13 @@ namespace AplicacionBar
 
         private void btn_productos_Click(object sender, EventArgs e)
         {
-            Formularios newList = new Formularios();
+            Formularios newList = new Formularios(0);
             newList.ShowDialog();
         }
 
         private void btn_nosotros_Click(object sender, EventArgs e)
         {
-            Formularios newList = new Formularios();
+            Formularios newList = new Formularios(2);
             newList.ShowDialog();
         }
 

@@ -20,25 +20,25 @@ namespace AplicacionBar
         private void btn_mesas_Click(object sender, EventArgs e)
         {
             Mesas windows = new Mesas();
-            windows.ShowDialog();
+            windows.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             Productos windows = new Productos();
-            windows.ShowDialog();
+            windows.Show();
         }
 
         private void btn_estadisticas_Click(object sender, EventArgs e)
         {
             Totales windows = new Totales();
-            windows.ShowDialog();
+            windows.Show();
         }
 
         private void btn_nosotros_Click(object sender, EventArgs e)
         {
             Nosotros windows = new Nosotros();
-            windows.ShowDialog();
+            windows.Show();
         }
     }
 }

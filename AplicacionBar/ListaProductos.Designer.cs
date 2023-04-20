@@ -29,80 +29,57 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaProductos));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Numeracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Clasificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GridData = new System.Windows.Forms.DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_filtro = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.GridData)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // GridData
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Numeracion,
-            this.nombre,
-            this.Clasificacion,
-            this.Precio,
-            this.Editar,
-            this.Eliminar});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 137);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 301);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // Numeracion
-            // 
-            this.Numeracion.HeaderText = "N°";
-            this.Numeracion.Name = "Numeracion";
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // Clasificacion
-            // 
-            this.Clasificacion.HeaderText = "Clasificacion";
-            this.Clasificacion.Name = "Clasificacion";
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Name = "Editar";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
+            this.GridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridData.Location = new System.Drawing.Point(12, 120);
+            this.GridData.MultiSelect = false;
+            this.GridData.Name = "GridData";
+            this.GridData.ReadOnly = true;
+            this.GridData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.GridData.Size = new System.Drawing.Size(776, 318);
+            this.GridData.TabIndex = 0;
+            this.GridData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.GridData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.GridData.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridData_CellEnter);
+            this.GridData.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridData_RowEnter);
+            this.GridData.Enter += new System.EventHandler(this.GridData_Enter);
+            this.GridData.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridData_KeyDown);
+            this.GridData.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GridData_KeyPress);
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(65, 83);
-            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(723, 48);
+            this.textBox1.Size = new System.Drawing.Size(723, 31);
             this.textBox1.TabIndex = 1;
             // 
             // btn_filtro
             // 
             this.btn_filtro.Location = new System.Drawing.Point(12, 83);
             this.btn_filtro.Name = "btn_filtro";
-            this.btn_filtro.Size = new System.Drawing.Size(47, 47);
+            this.btn_filtro.Size = new System.Drawing.Size(47, 31);
             this.btn_filtro.TabIndex = 2;
             this.btn_filtro.Text = "F";
             this.btn_filtro.UseVisualStyleBackColor = true;
+            this.btn_filtro.Click += new System.EventHandler(this.btn_filtro_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(39, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "label1";
             // 
             // ListaProductos
             // 
@@ -111,12 +88,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_filtro);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridData);
             this.Name = "ListaProductos";
             this.Text = "ListaProductos";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.ListaProductos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,14 +103,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numeracion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Clasificacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
+        private System.Windows.Forms.DataGridView GridData;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_filtro;
+        private System.Windows.Forms.Label label1;
     }
 }

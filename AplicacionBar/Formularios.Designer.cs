@@ -30,13 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Formularios));
             this.textBox_precio = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbBoxClass = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label_precio = new System.Windows.Forms.Label();
+            this.label_clas = new System.Windows.Forms.Label();
             this.textBox_nombre = new System.Windows.Forms.TextBox();
             this.btn_funcion = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.text_comprobacion = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox_precio
@@ -49,18 +50,20 @@
             this.textBox_precio.Name = "textBox_precio";
             this.textBox_precio.Size = new System.Drawing.Size(257, 24);
             this.textBox_precio.TabIndex = 1;
+            this.textBox_precio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_precio_KeyPress);
             // 
-            // comboBox1
+            // cmbBoxClass
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.ForeColor = System.Drawing.SystemColors.Info;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(274, 253);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(257, 33);
-            this.comboBox1.TabIndex = 2;
+            this.cmbBoxClass.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.cmbBoxClass.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cmbBoxClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxClass.ForeColor = System.Drawing.SystemColors.Info;
+            this.cmbBoxClass.FormattingEnabled = true;
+            this.cmbBoxClass.Location = new System.Drawing.Point(274, 253);
+            this.cmbBoxClass.Name = "cmbBoxClass";
+            this.cmbBoxClass.Size = new System.Drawing.Size(257, 33);
+            this.cmbBoxClass.TabIndex = 2;
             // 
             // label1
             // 
@@ -75,29 +78,29 @@
             this.label1.Text = "Nombre";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // label_precio
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(274, 165);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 24);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Precio";
+            this.label_precio.AutoSize = true;
+            this.label_precio.BackColor = System.Drawing.Color.Transparent;
+            this.label_precio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_precio.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_precio.Location = new System.Drawing.Point(274, 165);
+            this.label_precio.Name = "label_precio";
+            this.label_precio.Size = new System.Drawing.Size(64, 24);
+            this.label_precio.TabIndex = 4;
+            this.label_precio.Text = "Precio";
             // 
-            // label3
+            // label_clas
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.Control;
-            this.label3.Location = new System.Drawing.Point(274, 226);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 24);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Clasificacion";
+            this.label_clas.AutoSize = true;
+            this.label_clas.BackColor = System.Drawing.Color.Transparent;
+            this.label_clas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_clas.ForeColor = System.Drawing.SystemColors.Control;
+            this.label_clas.Location = new System.Drawing.Point(274, 226);
+            this.label_clas.Name = "label_clas";
+            this.label_clas.Size = new System.Drawing.Size(114, 24);
+            this.label_clas.TabIndex = 5;
+            this.label_clas.Text = "Clasificacion";
             // 
             // textBox_nombre
             // 
@@ -121,18 +124,29 @@
             this.btn_funcion.TabIndex = 7;
             this.btn_funcion.Text = "Agregar";
             this.btn_funcion.UseVisualStyleBackColor = false;
+            this.btn_funcion.Click += new System.EventHandler(this.btn_funcion_Click);
             // 
-            // button1
+            // btn_eliminar
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(315, 378);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 49);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_eliminar.BackColor = System.Drawing.Color.Red;
+            this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eliminar.Location = new System.Drawing.Point(315, 378);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(174, 49);
+            this.btn_eliminar.TabIndex = 8;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.UseVisualStyleBackColor = false;
+            this.btn_eliminar.Visible = false;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
+            // text_comprobacion
+            // 
+            this.text_comprobacion.AutoSize = true;
+            this.text_comprobacion.Location = new System.Drawing.Point(17, 40);
+            this.text_comprobacion.Name = "text_comprobacion";
+            this.text_comprobacion.Size = new System.Drawing.Size(0, 13);
+            this.text_comprobacion.TabIndex = 9;
             // 
             // Formularios
             // 
@@ -141,13 +155,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.text_comprobacion);
+            this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btn_funcion);
             this.Controls.Add(this.textBox_nombre);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label_clas);
+            this.Controls.Add(this.label_precio);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbBoxClass);
             this.Controls.Add(this.textBox_precio);
             this.Name = "Formularios";
             this.Text = "Formularios";
@@ -158,12 +173,13 @@
 
         #endregion
         private System.Windows.Forms.TextBox textBox_precio;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbBoxClass;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label_precio;
+        private System.Windows.Forms.Label label_clas;
         private System.Windows.Forms.TextBox textBox_nombre;
         private System.Windows.Forms.Button btn_funcion;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_eliminar;
+        private System.Windows.Forms.Label text_comprobacion;
     }
 }
