@@ -15,21 +15,37 @@ namespace AplicacionBar
         Funciones funFunciones = new Funciones();
         List<InterfaceProductos> AllProductos = new List<InterfaceProductos>();
 
-        public ListaProductos()
+        private void listarProductos(List<InterfaceProductos> NewData = null)
         {
-            InitializeComponent();
-            List<InterfaceProductos> productos = funFunciones.ProductGetAll();
-            GridData.DataSource = productos;
+            if (NewData == null)
+            {
+                List<InterfaceProductos> productos = funFunciones.ProductGetAll();
+                AllProductos = productos;
+                GridData.DataSource = productos;
+            }
+            else
+            {
+                GridData.DataSource = NewData;
+            }
             GridData.Columns[0].Width = 35;
             GridData.Columns[0].HeaderText = "N°";
             GridData.Columns[1].Width = 200;
             GridData.Columns[2].Width = 200;
             GridData.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            GridData.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             GridData.Columns[3].Width = 200;
             GridData.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            AllProductos = productos;
+            GridData.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             GridData.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             GridData.CurrentCell = null;
+        }
+
+        public ListaProductos()
+        {
+            List<InterfaceProductos> productos = funFunciones.ProductGetAll();
+            AllProductos = productos;
+            InitializeComponent();
+            listarProductos(productos);
         }
 
         private void ListaProductos_Load(object sender, EventArgs e)
@@ -51,6 +67,7 @@ namespace AplicacionBar
             if (GridData.SelectedRows == null || GridData.SelectedRows.Count < 0) return;
             Formularios newList = new Formularios(1, Convert.ToInt32(GridData.SelectedRows[0].Cells[0].Value));
             newList.ShowDialog();
+            listarProductos();
         }
 
         private void GridData_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -78,6 +95,24 @@ namespace AplicacionBar
             if (GridData.SelectedRows == null || GridData.SelectedRows.Count < 0) return;
             Formularios newList = new Formularios(1 , Convert.ToInt32(GridData.SelectedRows[0].Cells[0].Value));
             newList.ShowDialog();
+            listarProductos();
+        }
+
+        private void ListaProductos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            List<InterfaceProductos> newProductos = new List<InterfaceProductos>();
+
+            foreach(InterfaceProductos indidualProducto in AllProductos)
+            {
+                if (indidualProducto.nombre.ToLower().Contains(textBox1.Text.ToLower())) newProductos.Add(indidualProducto);
+            }
+
+            listarProductos(newProductos);
         }
     }
 }

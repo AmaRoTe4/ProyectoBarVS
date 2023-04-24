@@ -102,6 +102,8 @@ namespace AplicacionBar
         {
             List<InterfaceProductos> Productos = objectDatabase.ProductGetAll();
 
+            if (Productos.Count() == 0) return true;
+
             if (Productos == null || Productos.Count() == 0) return false;
 
             foreach (InterfaceProductos Producto in Productos)
@@ -115,6 +117,8 @@ namespace AplicacionBar
         public bool NoRepeatClass(string name)
         {
             List<Clasificacion> clasificaciones = objectDatabase.ClassGetAll();
+
+            if (clasificaciones.Count() == 0) return true;
 
             if (clasificaciones == null || clasificaciones.Count() == 0) return false;
 

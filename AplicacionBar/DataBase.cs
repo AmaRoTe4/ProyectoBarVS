@@ -12,7 +12,7 @@ namespace AplicacionBar
 {
     public class DataBase
     {
-        private SqlConnection connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=ProyectoBar;Data Source=DESKTOP-7VB377L\\SQLEXPRESS");
+        private SqlConnection connection = new SqlConnection("Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=proyecto_bar;Data Source=DESKTOP-7VB377L\\SQLEXPRESS");
 
         //classiicaciones
         public List<Clasificacion> ClassGetAll()

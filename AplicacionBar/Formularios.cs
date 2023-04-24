@@ -23,9 +23,20 @@ namespace AplicacionBar
 
             if (clases == null) return false;
 
-            foreach(Clasificacion clase in clases)
+            if(actividad == 1 || actividad == 0)
             {
-                cmbBoxClass.Items.Add(clase.nombre);
+                cmbBoxClass.Items.Clear();
+                foreach (Clasificacion clase in clases)
+                {
+                    cmbBoxClass.Items.Add(clase.nombre);
+                }
+            }else
+            {
+                cmBoxClasEdit.Items.Clear();
+                foreach (Clasificacion clase in clases)
+                {
+                    cmBoxClasEdit.Items.Add(clase.nombre);
+                }
             }
 
             return true;
@@ -40,7 +51,7 @@ namespace AplicacionBar
             //action = 1 -> editar producto
             //action = 2 -> crear clase
             //action = 3 -> editar clase
-            if(action == 0 || action == 1) cargaDeClases();
+            if(action == 0 || action == 1 || action == 2) cargaDeClases();
             if(action == 1 || action == 3)
             {
                 btn_funcion.Text = "Actualizar";
@@ -56,14 +67,20 @@ namespace AplicacionBar
                     cmbBoxClass.Text = funFunciones.ClassForId(productosSelect.clasificacion);
                     textBox_precio.Text = productosSelect.precio.ToString();
                 }
-                else
+                if(action == 3)
                 {
                     Clasificacion clasSelect = funFunciones.ClassGet(id);
+
                     generalClasificacion = clasSelect;
+                    textBox_nombre.Text = clasSelect.nombre;
                 }
             }
             if (action == 2 || action == 3)
             {
+                if (action == 2) { 
+                    btn_editarClas.Visible = true;
+                } 
+                btn_eliminar.Visible = false;
                 label_clas.Visible = false;
                 label_precio.Visible = false;
                 textBox_precio.Visible = false;
@@ -147,6 +164,7 @@ namespace AplicacionBar
                 {
                     MessageBox.Show("Creado con Exito");
                     clean();
+                    cargaDeClases();
                 }
                 else MessageBox.Show("Error al Crear");
             }
@@ -200,10 +218,17 @@ namespace AplicacionBar
                     return;
                 }
 
-                bool respuesta = funFunciones.ClassCreate(newClass);
+                if(generalClasificacion == null)
+                {
+                    MessageBox.Show("Error el Editar intente otra vez");
+                    this.Close();
+                    return;
+                }
+
+                bool respuesta = funFunciones.ClassEdita(generalClasificacion.id ,newClass);
                 if (respuesta)
                 {
-                    MessageBox.Show("Creado con Exito");
+                    MessageBox.Show("Editada con Exito");
                     this.Close();
                 }
                 else MessageBox.Show("Error al Crear");
@@ -230,6 +255,24 @@ namespace AplicacionBar
             }
             
             this.Close();
+        }
+
+        private void Formularios_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
+
+        private void btn_editarClas_Click(object sender, EventArgs e)
+        {
+            if(!cmBoxClasEdit.Visible)
+            cmBoxClasEdit.Visible = true;
+            
+            if(cmBoxClasEdit.Text != "")
+            {
+                Formularios newFormulario = new Formularios(3 , funFunciones.IdForNameClass(cmBoxClasEdit.Text));
+                newFormulario.ShowDialog();
+
+                this.Close();
+            }
         }
     }
 }

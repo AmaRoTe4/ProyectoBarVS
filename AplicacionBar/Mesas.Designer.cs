@@ -35,33 +35,6 @@
             this.menuMesas = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMesas = new System.Windows.Forms.Panel();
-            this.btnMesa1 = new System.Windows.Forms.Button();
-            this.btnMesa2 = new System.Windows.Forms.Button();
-            this.btnMesa3 = new System.Windows.Forms.Button();
-            this.btnMesa5 = new System.Windows.Forms.Button();
-            this.btnMesa4 = new System.Windows.Forms.Button();
-            this.btnMesa6 = new System.Windows.Forms.Button();
-            this.btnMesa7 = new System.Windows.Forms.Button();
-            this.btnMesa8 = new System.Windows.Forms.Button();
-            this.btnMesa9 = new System.Windows.Forms.Button();
-            this.btnMesa10 = new System.Windows.Forms.Button();
-            this.btnMesa12 = new System.Windows.Forms.Button();
-            this.btnMesa11 = new System.Windows.Forms.Button();
-            this.btnMesa13 = new System.Windows.Forms.Button();
-            this.btnMesa14 = new System.Windows.Forms.Button();
-            this.btnMesa15 = new System.Windows.Forms.Button();
-            this.btnMesa18 = new System.Windows.Forms.Button();
-            this.btnMesa17 = new System.Windows.Forms.Button();
-            this.btnMesa20 = new System.Windows.Forms.Button();
-            this.btnMesa19 = new System.Windows.Forms.Button();
-            this.btnMesa16 = new System.Windows.Forms.Button();
-            this.btnMesa21 = new System.Windows.Forms.Button();
-            this.btnMesa24 = new System.Windows.Forms.Button();
-            this.btnMesa22 = new System.Windows.Forms.Button();
-            this.btnMesa23 = new System.Windows.Forms.Button();
-            this.btnMesa25 = new System.Windows.Forms.Button();
-            this.btnMesa26 = new System.Windows.Forms.Button();
-            this.btnMesa27 = new System.Windows.Forms.Button();
             this.btnMesa34 = new System.Windows.Forms.Button();
             this.btnMesa35 = new System.Windows.Forms.Button();
             this.btnMesa36 = new System.Windows.Forms.Button();
@@ -71,28 +44,56 @@
             this.btnMesa30 = new System.Windows.Forms.Button();
             this.btnMesa28 = new System.Windows.Forms.Button();
             this.btnMesa29 = new System.Windows.Forms.Button();
+            this.btnMesa25 = new System.Windows.Forms.Button();
+            this.btnMesa26 = new System.Windows.Forms.Button();
+            this.btnMesa27 = new System.Windows.Forms.Button();
+            this.btnMesa23 = new System.Windows.Forms.Button();
+            this.btnMesa22 = new System.Windows.Forms.Button();
+            this.btnMesa24 = new System.Windows.Forms.Button();
+            this.btnMesa21 = new System.Windows.Forms.Button();
+            this.btnMesa16 = new System.Windows.Forms.Button();
+            this.btnMesa19 = new System.Windows.Forms.Button();
+            this.btnMesa20 = new System.Windows.Forms.Button();
+            this.btnMesa17 = new System.Windows.Forms.Button();
+            this.btnMesa18 = new System.Windows.Forms.Button();
+            this.btnMesa15 = new System.Windows.Forms.Button();
+            this.btnMesa14 = new System.Windows.Forms.Button();
+            this.btnMesa13 = new System.Windows.Forms.Button();
+            this.btnMesa11 = new System.Windows.Forms.Button();
+            this.btnMesa12 = new System.Windows.Forms.Button();
+            this.btnMesa10 = new System.Windows.Forms.Button();
+            this.btnMesa9 = new System.Windows.Forms.Button();
+            this.btnMesa8 = new System.Windows.Forms.Button();
+            this.btnMesa7 = new System.Windows.Forms.Button();
+            this.btnMesa6 = new System.Windows.Forms.Button();
+            this.btnMesa4 = new System.Windows.Forms.Button();
+            this.btnMesa5 = new System.Windows.Forms.Button();
+            this.btnMesa3 = new System.Windows.Forms.Button();
+            this.btnMesa2 = new System.Windows.Forms.Button();
+            this.btnMesa1 = new System.Windows.Forms.Button();
             this.panelMesaNum = new System.Windows.Forms.Panel();
-            this.btnSalirVistaMesa = new System.Windows.Forms.Button();
-            this.btnTicket = new System.Windows.Forms.Button();
-            this.btnCerrarVenta = new System.Windows.Forms.Button();
-            this.btnLimpiarVenta = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txtBoxBuscador = new System.Windows.Forms.TextBox();
-            this.listProductos = new System.Windows.Forms.CheckedListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBoxBuscador = new System.Windows.Forms.TextBox();
+            this.btnLimpiarVenta = new System.Windows.Forms.Button();
+            this.btnCerrarVenta = new System.Windows.Forms.Button();
+            this.btnTicket = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnSalirVistaMesa = new System.Windows.Forms.Button();
+            this.DataProductos = new System.Windows.Forms.DataGridView();
             this.menuMesas.SuspendLayout();
             this.panelMesas.SuspendLayout();
             this.panelMesaNum.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarMesa
@@ -195,384 +196,6 @@
             this.panelMesas.Name = "panelMesas";
             this.panelMesas.Size = new System.Drawing.Size(775, 343);
             this.panelMesas.TabIndex = 5;
-            // 
-            // btnMesa1
-            // 
-            this.btnMesa1.BackColor = System.Drawing.Color.White;
-            this.btnMesa1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa1.Location = new System.Drawing.Point(27, 15);
-            this.btnMesa1.Name = "btnMesa1";
-            this.btnMesa1.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa1.TabIndex = 0;
-            this.btnMesa1.Text = "1";
-            this.btnMesa1.UseVisualStyleBackColor = false;
-            this.btnMesa1.Visible = false;
-            this.btnMesa1.Click += new System.EventHandler(this.btnMesa1_Click);
-            // 
-            // btnMesa2
-            // 
-            this.btnMesa2.BackColor = System.Drawing.Color.White;
-            this.btnMesa2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa2.Location = new System.Drawing.Point(108, 15);
-            this.btnMesa2.Name = "btnMesa2";
-            this.btnMesa2.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa2.TabIndex = 1;
-            this.btnMesa2.Text = "2";
-            this.btnMesa2.UseVisualStyleBackColor = false;
-            this.btnMesa2.Visible = false;
-            this.btnMesa2.Click += new System.EventHandler(this.btnMesa2_Click);
-            // 
-            // btnMesa3
-            // 
-            this.btnMesa3.BackColor = System.Drawing.Color.White;
-            this.btnMesa3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa3.Location = new System.Drawing.Point(189, 15);
-            this.btnMesa3.Name = "btnMesa3";
-            this.btnMesa3.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa3.TabIndex = 2;
-            this.btnMesa3.Text = "3";
-            this.btnMesa3.UseVisualStyleBackColor = false;
-            this.btnMesa3.Visible = false;
-            this.btnMesa3.Click += new System.EventHandler(this.btnMesa3_Click);
-            // 
-            // btnMesa5
-            // 
-            this.btnMesa5.BackColor = System.Drawing.Color.White;
-            this.btnMesa5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa5.Location = new System.Drawing.Point(351, 15);
-            this.btnMesa5.Name = "btnMesa5";
-            this.btnMesa5.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa5.TabIndex = 3;
-            this.btnMesa5.Text = "5";
-            this.btnMesa5.UseVisualStyleBackColor = false;
-            this.btnMesa5.Visible = false;
-            this.btnMesa5.Click += new System.EventHandler(this.btnMesa5_Click);
-            // 
-            // btnMesa4
-            // 
-            this.btnMesa4.BackColor = System.Drawing.Color.White;
-            this.btnMesa4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa4.Location = new System.Drawing.Point(270, 15);
-            this.btnMesa4.Name = "btnMesa4";
-            this.btnMesa4.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa4.TabIndex = 4;
-            this.btnMesa4.Text = "4";
-            this.btnMesa4.UseVisualStyleBackColor = false;
-            this.btnMesa4.Visible = false;
-            this.btnMesa4.Click += new System.EventHandler(this.btnMesa4_Click);
-            // 
-            // btnMesa6
-            // 
-            this.btnMesa6.BackColor = System.Drawing.Color.White;
-            this.btnMesa6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa6.Location = new System.Drawing.Point(432, 15);
-            this.btnMesa6.Name = "btnMesa6";
-            this.btnMesa6.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa6.TabIndex = 5;
-            this.btnMesa6.Text = "6";
-            this.btnMesa6.UseVisualStyleBackColor = false;
-            this.btnMesa6.Visible = false;
-            this.btnMesa6.Click += new System.EventHandler(this.btnMesa6_Click);
-            // 
-            // btnMesa7
-            // 
-            this.btnMesa7.BackColor = System.Drawing.Color.White;
-            this.btnMesa7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa7.Location = new System.Drawing.Point(513, 15);
-            this.btnMesa7.Name = "btnMesa7";
-            this.btnMesa7.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa7.TabIndex = 6;
-            this.btnMesa7.Text = "7";
-            this.btnMesa7.UseVisualStyleBackColor = false;
-            this.btnMesa7.Visible = false;
-            this.btnMesa7.Click += new System.EventHandler(this.btnMesa7_Click);
-            // 
-            // btnMesa8
-            // 
-            this.btnMesa8.BackColor = System.Drawing.Color.White;
-            this.btnMesa8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa8.Location = new System.Drawing.Point(594, 15);
-            this.btnMesa8.Name = "btnMesa8";
-            this.btnMesa8.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa8.TabIndex = 7;
-            this.btnMesa8.Text = "8";
-            this.btnMesa8.UseVisualStyleBackColor = false;
-            this.btnMesa8.Visible = false;
-            this.btnMesa8.Click += new System.EventHandler(this.btnMesa8_Click);
-            // 
-            // btnMesa9
-            // 
-            this.btnMesa9.BackColor = System.Drawing.Color.White;
-            this.btnMesa9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa9.Location = new System.Drawing.Point(675, 15);
-            this.btnMesa9.Name = "btnMesa9";
-            this.btnMesa9.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa9.TabIndex = 8;
-            this.btnMesa9.Text = "9";
-            this.btnMesa9.UseVisualStyleBackColor = false;
-            this.btnMesa9.Visible = false;
-            this.btnMesa9.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // btnMesa10
-            // 
-            this.btnMesa10.BackColor = System.Drawing.Color.White;
-            this.btnMesa10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa10.Location = new System.Drawing.Point(27, 96);
-            this.btnMesa10.Name = "btnMesa10";
-            this.btnMesa10.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa10.TabIndex = 9;
-            this.btnMesa10.Text = "10";
-            this.btnMesa10.UseVisualStyleBackColor = false;
-            this.btnMesa10.Visible = false;
-            this.btnMesa10.Click += new System.EventHandler(this.btnMesa10_Click);
-            // 
-            // btnMesa12
-            // 
-            this.btnMesa12.BackColor = System.Drawing.Color.White;
-            this.btnMesa12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa12.Location = new System.Drawing.Point(189, 96);
-            this.btnMesa12.Name = "btnMesa12";
-            this.btnMesa12.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa12.TabIndex = 10;
-            this.btnMesa12.Text = "12";
-            this.btnMesa12.UseVisualStyleBackColor = false;
-            this.btnMesa12.Visible = false;
-            this.btnMesa12.Click += new System.EventHandler(this.btnMesa12_Click);
-            // 
-            // btnMesa11
-            // 
-            this.btnMesa11.BackColor = System.Drawing.Color.White;
-            this.btnMesa11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa11.Location = new System.Drawing.Point(108, 96);
-            this.btnMesa11.Name = "btnMesa11";
-            this.btnMesa11.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa11.TabIndex = 11;
-            this.btnMesa11.Text = "11";
-            this.btnMesa11.UseVisualStyleBackColor = false;
-            this.btnMesa11.Visible = false;
-            this.btnMesa11.Click += new System.EventHandler(this.btnMesa11_Click);
-            // 
-            // btnMesa13
-            // 
-            this.btnMesa13.BackColor = System.Drawing.Color.White;
-            this.btnMesa13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa13.Location = new System.Drawing.Point(270, 96);
-            this.btnMesa13.Name = "btnMesa13";
-            this.btnMesa13.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa13.TabIndex = 12;
-            this.btnMesa13.Text = "13";
-            this.btnMesa13.UseVisualStyleBackColor = false;
-            this.btnMesa13.Visible = false;
-            this.btnMesa13.Click += new System.EventHandler(this.btnMesa13_Click);
-            // 
-            // btnMesa14
-            // 
-            this.btnMesa14.BackColor = System.Drawing.Color.White;
-            this.btnMesa14.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa14.Location = new System.Drawing.Point(351, 96);
-            this.btnMesa14.Name = "btnMesa14";
-            this.btnMesa14.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa14.TabIndex = 13;
-            this.btnMesa14.Text = "14";
-            this.btnMesa14.UseVisualStyleBackColor = false;
-            this.btnMesa14.Visible = false;
-            this.btnMesa14.Click += new System.EventHandler(this.btnMesa14_Click);
-            // 
-            // btnMesa15
-            // 
-            this.btnMesa15.BackColor = System.Drawing.Color.White;
-            this.btnMesa15.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa15.Location = new System.Drawing.Point(432, 96);
-            this.btnMesa15.Name = "btnMesa15";
-            this.btnMesa15.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa15.TabIndex = 14;
-            this.btnMesa15.Text = "15";
-            this.btnMesa15.UseVisualStyleBackColor = false;
-            this.btnMesa15.Visible = false;
-            this.btnMesa15.Click += new System.EventHandler(this.btnMesa15_Click);
-            // 
-            // btnMesa18
-            // 
-            this.btnMesa18.BackColor = System.Drawing.Color.White;
-            this.btnMesa18.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa18.Location = new System.Drawing.Point(675, 96);
-            this.btnMesa18.Name = "btnMesa18";
-            this.btnMesa18.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa18.TabIndex = 15;
-            this.btnMesa18.Text = "18";
-            this.btnMesa18.UseVisualStyleBackColor = false;
-            this.btnMesa18.Visible = false;
-            this.btnMesa18.Click += new System.EventHandler(this.btnMesa18_Click);
-            // 
-            // btnMesa17
-            // 
-            this.btnMesa17.BackColor = System.Drawing.Color.White;
-            this.btnMesa17.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa17.Location = new System.Drawing.Point(594, 96);
-            this.btnMesa17.Name = "btnMesa17";
-            this.btnMesa17.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa17.TabIndex = 16;
-            this.btnMesa17.Text = "17";
-            this.btnMesa17.UseVisualStyleBackColor = false;
-            this.btnMesa17.Visible = false;
-            this.btnMesa17.Click += new System.EventHandler(this.btnMesa17_Click);
-            // 
-            // btnMesa20
-            // 
-            this.btnMesa20.BackColor = System.Drawing.Color.White;
-            this.btnMesa20.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa20.Location = new System.Drawing.Point(108, 177);
-            this.btnMesa20.Name = "btnMesa20";
-            this.btnMesa20.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa20.TabIndex = 17;
-            this.btnMesa20.Text = "20";
-            this.btnMesa20.UseVisualStyleBackColor = false;
-            this.btnMesa20.Visible = false;
-            this.btnMesa20.Click += new System.EventHandler(this.btnMesa20_Click);
-            // 
-            // btnMesa19
-            // 
-            this.btnMesa19.BackColor = System.Drawing.Color.White;
-            this.btnMesa19.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa19.Location = new System.Drawing.Point(27, 177);
-            this.btnMesa19.Name = "btnMesa19";
-            this.btnMesa19.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa19.TabIndex = 18;
-            this.btnMesa19.Text = "19";
-            this.btnMesa19.UseVisualStyleBackColor = false;
-            this.btnMesa19.Visible = false;
-            this.btnMesa19.Click += new System.EventHandler(this.btnMesa19_Click);
-            // 
-            // btnMesa16
-            // 
-            this.btnMesa16.BackColor = System.Drawing.Color.White;
-            this.btnMesa16.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa16.Location = new System.Drawing.Point(513, 96);
-            this.btnMesa16.Name = "btnMesa16";
-            this.btnMesa16.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa16.TabIndex = 19;
-            this.btnMesa16.Text = "16";
-            this.btnMesa16.UseVisualStyleBackColor = false;
-            this.btnMesa16.Visible = false;
-            this.btnMesa16.Click += new System.EventHandler(this.btnMesa16_Click);
-            // 
-            // btnMesa21
-            // 
-            this.btnMesa21.BackColor = System.Drawing.Color.White;
-            this.btnMesa21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa21.Location = new System.Drawing.Point(189, 177);
-            this.btnMesa21.Name = "btnMesa21";
-            this.btnMesa21.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa21.TabIndex = 20;
-            this.btnMesa21.Text = "21";
-            this.btnMesa21.UseVisualStyleBackColor = false;
-            this.btnMesa21.Visible = false;
-            this.btnMesa21.Click += new System.EventHandler(this.btnMesa21_Click);
-            // 
-            // btnMesa24
-            // 
-            this.btnMesa24.BackColor = System.Drawing.Color.White;
-            this.btnMesa24.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa24.Location = new System.Drawing.Point(432, 177);
-            this.btnMesa24.Name = "btnMesa24";
-            this.btnMesa24.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa24.TabIndex = 21;
-            this.btnMesa24.Text = "24";
-            this.btnMesa24.UseVisualStyleBackColor = false;
-            this.btnMesa24.Visible = false;
-            this.btnMesa24.Click += new System.EventHandler(this.btnMesa24_Click);
-            // 
-            // btnMesa22
-            // 
-            this.btnMesa22.BackColor = System.Drawing.Color.White;
-            this.btnMesa22.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa22.Location = new System.Drawing.Point(270, 177);
-            this.btnMesa22.Name = "btnMesa22";
-            this.btnMesa22.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa22.TabIndex = 22;
-            this.btnMesa22.Text = "22";
-            this.btnMesa22.UseVisualStyleBackColor = false;
-            this.btnMesa22.Visible = false;
-            this.btnMesa22.Click += new System.EventHandler(this.btnMesa22_Click);
-            // 
-            // btnMesa23
-            // 
-            this.btnMesa23.BackColor = System.Drawing.Color.White;
-            this.btnMesa23.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa23.Location = new System.Drawing.Point(351, 177);
-            this.btnMesa23.Name = "btnMesa23";
-            this.btnMesa23.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa23.TabIndex = 23;
-            this.btnMesa23.Text = "23";
-            this.btnMesa23.UseVisualStyleBackColor = false;
-            this.btnMesa23.Visible = false;
-            this.btnMesa23.Click += new System.EventHandler(this.btnMesa23_Click);
-            // 
-            // btnMesa25
-            // 
-            this.btnMesa25.BackColor = System.Drawing.Color.White;
-            this.btnMesa25.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa25.Location = new System.Drawing.Point(513, 177);
-            this.btnMesa25.Name = "btnMesa25";
-            this.btnMesa25.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa25.TabIndex = 26;
-            this.btnMesa25.Text = "25";
-            this.btnMesa25.UseVisualStyleBackColor = false;
-            this.btnMesa25.Visible = false;
-            this.btnMesa25.Click += new System.EventHandler(this.btnMesa25_Click);
-            // 
-            // btnMesa26
-            // 
-            this.btnMesa26.BackColor = System.Drawing.Color.White;
-            this.btnMesa26.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa26.Location = new System.Drawing.Point(594, 177);
-            this.btnMesa26.Name = "btnMesa26";
-            this.btnMesa26.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa26.TabIndex = 25;
-            this.btnMesa26.Text = "26";
-            this.btnMesa26.UseVisualStyleBackColor = false;
-            this.btnMesa26.Visible = false;
-            this.btnMesa26.Click += new System.EventHandler(this.btnMesa26_Click);
-            // 
-            // btnMesa27
-            // 
-            this.btnMesa27.BackColor = System.Drawing.Color.White;
-            this.btnMesa27.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMesa27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMesa27.Location = new System.Drawing.Point(675, 177);
-            this.btnMesa27.Name = "btnMesa27";
-            this.btnMesa27.Size = new System.Drawing.Size(75, 75);
-            this.btnMesa27.TabIndex = 24;
-            this.btnMesa27.Text = "27";
-            this.btnMesa27.UseVisualStyleBackColor = false;
-            this.btnMesa27.Visible = false;
-            this.btnMesa27.Click += new System.EventHandler(this.btnMesa27_Click);
             // 
             // btnMesa34
             // 
@@ -700,6 +323,384 @@
             this.btnMesa29.Visible = false;
             this.btnMesa29.Click += new System.EventHandler(this.btnMesa29_Click);
             // 
+            // btnMesa25
+            // 
+            this.btnMesa25.BackColor = System.Drawing.Color.White;
+            this.btnMesa25.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa25.Location = new System.Drawing.Point(513, 177);
+            this.btnMesa25.Name = "btnMesa25";
+            this.btnMesa25.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa25.TabIndex = 26;
+            this.btnMesa25.Text = "25";
+            this.btnMesa25.UseVisualStyleBackColor = false;
+            this.btnMesa25.Visible = false;
+            this.btnMesa25.Click += new System.EventHandler(this.btnMesa25_Click);
+            // 
+            // btnMesa26
+            // 
+            this.btnMesa26.BackColor = System.Drawing.Color.White;
+            this.btnMesa26.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa26.Location = new System.Drawing.Point(594, 177);
+            this.btnMesa26.Name = "btnMesa26";
+            this.btnMesa26.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa26.TabIndex = 25;
+            this.btnMesa26.Text = "26";
+            this.btnMesa26.UseVisualStyleBackColor = false;
+            this.btnMesa26.Visible = false;
+            this.btnMesa26.Click += new System.EventHandler(this.btnMesa26_Click);
+            // 
+            // btnMesa27
+            // 
+            this.btnMesa27.BackColor = System.Drawing.Color.White;
+            this.btnMesa27.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa27.Location = new System.Drawing.Point(675, 177);
+            this.btnMesa27.Name = "btnMesa27";
+            this.btnMesa27.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa27.TabIndex = 24;
+            this.btnMesa27.Text = "27";
+            this.btnMesa27.UseVisualStyleBackColor = false;
+            this.btnMesa27.Visible = false;
+            this.btnMesa27.Click += new System.EventHandler(this.btnMesa27_Click);
+            // 
+            // btnMesa23
+            // 
+            this.btnMesa23.BackColor = System.Drawing.Color.White;
+            this.btnMesa23.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa23.Location = new System.Drawing.Point(351, 177);
+            this.btnMesa23.Name = "btnMesa23";
+            this.btnMesa23.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa23.TabIndex = 23;
+            this.btnMesa23.Text = "23";
+            this.btnMesa23.UseVisualStyleBackColor = false;
+            this.btnMesa23.Visible = false;
+            this.btnMesa23.Click += new System.EventHandler(this.btnMesa23_Click);
+            // 
+            // btnMesa22
+            // 
+            this.btnMesa22.BackColor = System.Drawing.Color.White;
+            this.btnMesa22.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa22.Location = new System.Drawing.Point(270, 177);
+            this.btnMesa22.Name = "btnMesa22";
+            this.btnMesa22.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa22.TabIndex = 22;
+            this.btnMesa22.Text = "22";
+            this.btnMesa22.UseVisualStyleBackColor = false;
+            this.btnMesa22.Visible = false;
+            this.btnMesa22.Click += new System.EventHandler(this.btnMesa22_Click);
+            // 
+            // btnMesa24
+            // 
+            this.btnMesa24.BackColor = System.Drawing.Color.White;
+            this.btnMesa24.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa24.Location = new System.Drawing.Point(432, 177);
+            this.btnMesa24.Name = "btnMesa24";
+            this.btnMesa24.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa24.TabIndex = 21;
+            this.btnMesa24.Text = "24";
+            this.btnMesa24.UseVisualStyleBackColor = false;
+            this.btnMesa24.Visible = false;
+            this.btnMesa24.Click += new System.EventHandler(this.btnMesa24_Click);
+            // 
+            // btnMesa21
+            // 
+            this.btnMesa21.BackColor = System.Drawing.Color.White;
+            this.btnMesa21.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa21.Location = new System.Drawing.Point(189, 177);
+            this.btnMesa21.Name = "btnMesa21";
+            this.btnMesa21.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa21.TabIndex = 20;
+            this.btnMesa21.Text = "21";
+            this.btnMesa21.UseVisualStyleBackColor = false;
+            this.btnMesa21.Visible = false;
+            this.btnMesa21.Click += new System.EventHandler(this.btnMesa21_Click);
+            // 
+            // btnMesa16
+            // 
+            this.btnMesa16.BackColor = System.Drawing.Color.White;
+            this.btnMesa16.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa16.Location = new System.Drawing.Point(513, 96);
+            this.btnMesa16.Name = "btnMesa16";
+            this.btnMesa16.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa16.TabIndex = 19;
+            this.btnMesa16.Text = "16";
+            this.btnMesa16.UseVisualStyleBackColor = false;
+            this.btnMesa16.Visible = false;
+            this.btnMesa16.Click += new System.EventHandler(this.btnMesa16_Click);
+            // 
+            // btnMesa19
+            // 
+            this.btnMesa19.BackColor = System.Drawing.Color.White;
+            this.btnMesa19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa19.Location = new System.Drawing.Point(27, 177);
+            this.btnMesa19.Name = "btnMesa19";
+            this.btnMesa19.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa19.TabIndex = 18;
+            this.btnMesa19.Text = "19";
+            this.btnMesa19.UseVisualStyleBackColor = false;
+            this.btnMesa19.Visible = false;
+            this.btnMesa19.Click += new System.EventHandler(this.btnMesa19_Click);
+            // 
+            // btnMesa20
+            // 
+            this.btnMesa20.BackColor = System.Drawing.Color.White;
+            this.btnMesa20.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa20.Location = new System.Drawing.Point(108, 177);
+            this.btnMesa20.Name = "btnMesa20";
+            this.btnMesa20.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa20.TabIndex = 17;
+            this.btnMesa20.Text = "20";
+            this.btnMesa20.UseVisualStyleBackColor = false;
+            this.btnMesa20.Visible = false;
+            this.btnMesa20.Click += new System.EventHandler(this.btnMesa20_Click);
+            // 
+            // btnMesa17
+            // 
+            this.btnMesa17.BackColor = System.Drawing.Color.White;
+            this.btnMesa17.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa17.Location = new System.Drawing.Point(594, 96);
+            this.btnMesa17.Name = "btnMesa17";
+            this.btnMesa17.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa17.TabIndex = 16;
+            this.btnMesa17.Text = "17";
+            this.btnMesa17.UseVisualStyleBackColor = false;
+            this.btnMesa17.Visible = false;
+            this.btnMesa17.Click += new System.EventHandler(this.btnMesa17_Click);
+            // 
+            // btnMesa18
+            // 
+            this.btnMesa18.BackColor = System.Drawing.Color.White;
+            this.btnMesa18.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa18.Location = new System.Drawing.Point(675, 96);
+            this.btnMesa18.Name = "btnMesa18";
+            this.btnMesa18.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa18.TabIndex = 15;
+            this.btnMesa18.Text = "18";
+            this.btnMesa18.UseVisualStyleBackColor = false;
+            this.btnMesa18.Visible = false;
+            this.btnMesa18.Click += new System.EventHandler(this.btnMesa18_Click);
+            // 
+            // btnMesa15
+            // 
+            this.btnMesa15.BackColor = System.Drawing.Color.White;
+            this.btnMesa15.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa15.Location = new System.Drawing.Point(432, 96);
+            this.btnMesa15.Name = "btnMesa15";
+            this.btnMesa15.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa15.TabIndex = 14;
+            this.btnMesa15.Text = "15";
+            this.btnMesa15.UseVisualStyleBackColor = false;
+            this.btnMesa15.Visible = false;
+            this.btnMesa15.Click += new System.EventHandler(this.btnMesa15_Click);
+            // 
+            // btnMesa14
+            // 
+            this.btnMesa14.BackColor = System.Drawing.Color.White;
+            this.btnMesa14.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa14.Location = new System.Drawing.Point(351, 96);
+            this.btnMesa14.Name = "btnMesa14";
+            this.btnMesa14.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa14.TabIndex = 13;
+            this.btnMesa14.Text = "14";
+            this.btnMesa14.UseVisualStyleBackColor = false;
+            this.btnMesa14.Visible = false;
+            this.btnMesa14.Click += new System.EventHandler(this.btnMesa14_Click);
+            // 
+            // btnMesa13
+            // 
+            this.btnMesa13.BackColor = System.Drawing.Color.White;
+            this.btnMesa13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa13.Location = new System.Drawing.Point(270, 96);
+            this.btnMesa13.Name = "btnMesa13";
+            this.btnMesa13.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa13.TabIndex = 12;
+            this.btnMesa13.Text = "13";
+            this.btnMesa13.UseVisualStyleBackColor = false;
+            this.btnMesa13.Visible = false;
+            this.btnMesa13.Click += new System.EventHandler(this.btnMesa13_Click);
+            // 
+            // btnMesa11
+            // 
+            this.btnMesa11.BackColor = System.Drawing.Color.White;
+            this.btnMesa11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa11.Location = new System.Drawing.Point(108, 96);
+            this.btnMesa11.Name = "btnMesa11";
+            this.btnMesa11.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa11.TabIndex = 11;
+            this.btnMesa11.Text = "11";
+            this.btnMesa11.UseVisualStyleBackColor = false;
+            this.btnMesa11.Visible = false;
+            this.btnMesa11.Click += new System.EventHandler(this.btnMesa11_Click);
+            // 
+            // btnMesa12
+            // 
+            this.btnMesa12.BackColor = System.Drawing.Color.White;
+            this.btnMesa12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa12.Location = new System.Drawing.Point(189, 96);
+            this.btnMesa12.Name = "btnMesa12";
+            this.btnMesa12.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa12.TabIndex = 10;
+            this.btnMesa12.Text = "12";
+            this.btnMesa12.UseVisualStyleBackColor = false;
+            this.btnMesa12.Visible = false;
+            this.btnMesa12.Click += new System.EventHandler(this.btnMesa12_Click);
+            // 
+            // btnMesa10
+            // 
+            this.btnMesa10.BackColor = System.Drawing.Color.White;
+            this.btnMesa10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa10.Location = new System.Drawing.Point(27, 96);
+            this.btnMesa10.Name = "btnMesa10";
+            this.btnMesa10.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa10.TabIndex = 9;
+            this.btnMesa10.Text = "10";
+            this.btnMesa10.UseVisualStyleBackColor = false;
+            this.btnMesa10.Visible = false;
+            this.btnMesa10.Click += new System.EventHandler(this.btnMesa10_Click);
+            // 
+            // btnMesa9
+            // 
+            this.btnMesa9.BackColor = System.Drawing.Color.White;
+            this.btnMesa9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa9.Location = new System.Drawing.Point(675, 15);
+            this.btnMesa9.Name = "btnMesa9";
+            this.btnMesa9.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa9.TabIndex = 8;
+            this.btnMesa9.Text = "9";
+            this.btnMesa9.UseVisualStyleBackColor = false;
+            this.btnMesa9.Visible = false;
+            this.btnMesa9.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // btnMesa8
+            // 
+            this.btnMesa8.BackColor = System.Drawing.Color.White;
+            this.btnMesa8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa8.Location = new System.Drawing.Point(594, 15);
+            this.btnMesa8.Name = "btnMesa8";
+            this.btnMesa8.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa8.TabIndex = 7;
+            this.btnMesa8.Text = "8";
+            this.btnMesa8.UseVisualStyleBackColor = false;
+            this.btnMesa8.Visible = false;
+            this.btnMesa8.Click += new System.EventHandler(this.btnMesa8_Click);
+            // 
+            // btnMesa7
+            // 
+            this.btnMesa7.BackColor = System.Drawing.Color.White;
+            this.btnMesa7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa7.Location = new System.Drawing.Point(513, 15);
+            this.btnMesa7.Name = "btnMesa7";
+            this.btnMesa7.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa7.TabIndex = 6;
+            this.btnMesa7.Text = "7";
+            this.btnMesa7.UseVisualStyleBackColor = false;
+            this.btnMesa7.Visible = false;
+            this.btnMesa7.Click += new System.EventHandler(this.btnMesa7_Click);
+            // 
+            // btnMesa6
+            // 
+            this.btnMesa6.BackColor = System.Drawing.Color.White;
+            this.btnMesa6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa6.Location = new System.Drawing.Point(432, 15);
+            this.btnMesa6.Name = "btnMesa6";
+            this.btnMesa6.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa6.TabIndex = 5;
+            this.btnMesa6.Text = "6";
+            this.btnMesa6.UseVisualStyleBackColor = false;
+            this.btnMesa6.Visible = false;
+            this.btnMesa6.Click += new System.EventHandler(this.btnMesa6_Click);
+            // 
+            // btnMesa4
+            // 
+            this.btnMesa4.BackColor = System.Drawing.Color.White;
+            this.btnMesa4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa4.Location = new System.Drawing.Point(270, 15);
+            this.btnMesa4.Name = "btnMesa4";
+            this.btnMesa4.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa4.TabIndex = 4;
+            this.btnMesa4.Text = "4";
+            this.btnMesa4.UseVisualStyleBackColor = false;
+            this.btnMesa4.Visible = false;
+            this.btnMesa4.Click += new System.EventHandler(this.btnMesa4_Click);
+            // 
+            // btnMesa5
+            // 
+            this.btnMesa5.BackColor = System.Drawing.Color.White;
+            this.btnMesa5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa5.Location = new System.Drawing.Point(351, 15);
+            this.btnMesa5.Name = "btnMesa5";
+            this.btnMesa5.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa5.TabIndex = 3;
+            this.btnMesa5.Text = "5";
+            this.btnMesa5.UseVisualStyleBackColor = false;
+            this.btnMesa5.Visible = false;
+            this.btnMesa5.Click += new System.EventHandler(this.btnMesa5_Click);
+            // 
+            // btnMesa3
+            // 
+            this.btnMesa3.BackColor = System.Drawing.Color.White;
+            this.btnMesa3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa3.Location = new System.Drawing.Point(189, 15);
+            this.btnMesa3.Name = "btnMesa3";
+            this.btnMesa3.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa3.TabIndex = 2;
+            this.btnMesa3.Text = "3";
+            this.btnMesa3.UseVisualStyleBackColor = false;
+            this.btnMesa3.Visible = false;
+            this.btnMesa3.Click += new System.EventHandler(this.btnMesa3_Click);
+            // 
+            // btnMesa2
+            // 
+            this.btnMesa2.BackColor = System.Drawing.Color.White;
+            this.btnMesa2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa2.Location = new System.Drawing.Point(108, 15);
+            this.btnMesa2.Name = "btnMesa2";
+            this.btnMesa2.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa2.TabIndex = 1;
+            this.btnMesa2.Text = "2";
+            this.btnMesa2.UseVisualStyleBackColor = false;
+            this.btnMesa2.Visible = false;
+            this.btnMesa2.Click += new System.EventHandler(this.btnMesa2_Click);
+            // 
+            // btnMesa1
+            // 
+            this.btnMesa1.BackColor = System.Drawing.Color.White;
+            this.btnMesa1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMesa1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMesa1.Location = new System.Drawing.Point(27, 15);
+            this.btnMesa1.Name = "btnMesa1";
+            this.btnMesa1.Size = new System.Drawing.Size(75, 75);
+            this.btnMesa1.TabIndex = 0;
+            this.btnMesa1.Text = "1";
+            this.btnMesa1.UseVisualStyleBackColor = false;
+            this.btnMesa1.Visible = false;
+            this.btnMesa1.Click += new System.EventHandler(this.btnMesa1_Click);
+            // 
             // panelMesaNum
             // 
             this.panelMesaNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(201)))), ((int)(((byte)(202)))));
@@ -717,91 +718,58 @@
             this.panelMesaNum.Visible = false;
             this.panelMesaNum.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMesaNum_Paint);
             // 
-            // btnSalirVistaMesa
+            // panel3
             // 
-            this.btnSalirVistaMesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.btnSalirVistaMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalirVistaMesa.Location = new System.Drawing.Point(733, 13);
-            this.btnSalirVistaMesa.Name = "btnSalirVistaMesa";
-            this.btnSalirVistaMesa.Size = new System.Drawing.Size(30, 30);
-            this.btnSalirVistaMesa.TabIndex = 0;
-            this.btnSalirVistaMesa.Text = "X";
-            this.btnSalirVistaMesa.UseVisualStyleBackColor = false;
-            this.btnSalirVistaMesa.Click += new System.EventHandler(this.button1_Click);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(81)))), ((int)(((byte)(7)))));
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Location = new System.Drawing.Point(14, 55);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(125, 32);
+            this.panel3.TabIndex = 2;
             // 
-            // btnTicket
+            // label1
             // 
-            this.btnTicket.BackColor = System.Drawing.Color.Green;
-            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTicket.Location = new System.Drawing.Point(14, 287);
-            this.btnTicket.Name = "btnTicket";
-            this.btnTicket.Size = new System.Drawing.Size(125, 37);
-            this.btnTicket.TabIndex = 2;
-            this.btnTicket.Text = "Ticket";
-            this.btnTicket.UseVisualStyleBackColor = false;
-            // 
-            // btnCerrarVenta
-            // 
-            this.btnCerrarVenta.BackColor = System.Drawing.Color.Green;
-            this.btnCerrarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarVenta.Location = new System.Drawing.Point(14, 330);
-            this.btnCerrarVenta.Name = "btnCerrarVenta";
-            this.btnCerrarVenta.Size = new System.Drawing.Size(125, 37);
-            this.btnCerrarVenta.TabIndex = 3;
-            this.btnCerrarVenta.Text = "Cerrar Venta";
-            this.btnCerrarVenta.UseVisualStyleBackColor = false;
-            this.btnCerrarVenta.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnLimpiarVenta
-            // 
-            this.btnLimpiarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
-            this.btnLimpiarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarVenta.Location = new System.Drawing.Point(14, 373);
-            this.btnLimpiarVenta.Name = "btnLimpiarVenta";
-            this.btnLimpiarVenta.Size = new System.Drawing.Size(125, 37);
-            this.btnLimpiarVenta.TabIndex = 4;
-            this.btnLimpiarVenta.Text = "Limpiar";
-            this.btnLimpiarVenta.UseVisualStyleBackColor = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(6, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(81, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Nombre";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(88)))), ((int)(((byte)(88)))));
+            this.panel2.Controls.Add(this.DataProductos);
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.listProductos);
             this.panel2.Controls.Add(this.txtBoxBuscador);
             this.panel2.Location = new System.Drawing.Point(153, 49);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(609, 371);
             this.panel2.TabIndex = 5;
             // 
-            // txtBoxBuscador
+            // dataGridView1
             // 
-            this.txtBoxBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxBuscador.Location = new System.Drawing.Point(13, 12);
-            this.txtBoxBuscador.Multiline = true;
-            this.txtBoxBuscador.Name = "txtBoxBuscador";
-            this.txtBoxBuscador.Size = new System.Drawing.Size(586, 36);
-            this.txtBoxBuscador.TabIndex = 0;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 172);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(586, 189);
+            this.dataGridView1.TabIndex = 7;
             // 
-            // listProductos
+            // button1
             // 
-            this.listProductos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listProductos.FormattingEnabled = true;
-            this.listProductos.Items.AddRange(new object[] {
-            "mono",
-            "mono1",
-            "mono2",
-            "mono3",
-            "mono4",
-            "mono5",
-            "mono6",
-            "mono7"});
-            this.listProductos.Location = new System.Drawing.Point(13, 55);
-            this.listProductos.Name = "listProductos";
-            this.listProductos.Size = new System.Drawing.Size(586, 76);
-            this.listProductos.TabIndex = 1;
+            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(487, 137);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 28);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Agregar";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // textBox1
             // 
@@ -815,35 +783,49 @@
             this.textBox1.Text = "1";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // button1
+            // txtBoxBuscador
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(487, 137);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 28);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.txtBoxBuscador.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxBuscador.Location = new System.Drawing.Point(13, 12);
+            this.txtBoxBuscador.Multiline = true;
+            this.txtBoxBuscador.Name = "txtBoxBuscador";
+            this.txtBoxBuscador.Size = new System.Drawing.Size(586, 36);
+            this.txtBoxBuscador.TabIndex = 0;
+            this.txtBoxBuscador.TextChanged += new System.EventHandler(this.txtBoxBuscador_TextChanged);
             // 
-            // dataGridView1
+            // btnLimpiarVenta
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 172);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(586, 189);
-            this.dataGridView1.TabIndex = 7;
+            this.btnLimpiarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnLimpiarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarVenta.Location = new System.Drawing.Point(14, 373);
+            this.btnLimpiarVenta.Name = "btnLimpiarVenta";
+            this.btnLimpiarVenta.Size = new System.Drawing.Size(125, 37);
+            this.btnLimpiarVenta.TabIndex = 4;
+            this.btnLimpiarVenta.Text = "Limpiar";
+            this.btnLimpiarVenta.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // btnCerrarVenta
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(6, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre";
+            this.btnCerrarVenta.BackColor = System.Drawing.Color.Green;
+            this.btnCerrarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarVenta.Location = new System.Drawing.Point(14, 330);
+            this.btnCerrarVenta.Name = "btnCerrarVenta";
+            this.btnCerrarVenta.Size = new System.Drawing.Size(125, 37);
+            this.btnCerrarVenta.TabIndex = 3;
+            this.btnCerrarVenta.Text = "Cerrar Venta";
+            this.btnCerrarVenta.UseVisualStyleBackColor = false;
+            this.btnCerrarVenta.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnTicket
+            // 
+            this.btnTicket.BackColor = System.Drawing.Color.Green;
+            this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTicket.Location = new System.Drawing.Point(14, 287);
+            this.btnTicket.Name = "btnTicket";
+            this.btnTicket.Size = new System.Drawing.Size(125, 37);
+            this.btnTicket.TabIndex = 2;
+            this.btnTicket.Text = "Ticket";
+            this.btnTicket.UseVisualStyleBackColor = false;
             // 
             // panel1
             // 
@@ -854,15 +836,6 @@
             this.panel1.Size = new System.Drawing.Size(125, 36);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(81)))), ((int)(((byte)(7)))));
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(14, 55);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(125, 32);
-            this.panel3.TabIndex = 2;
             // 
             // label2
             // 
@@ -875,6 +848,27 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Mesa N°1";
             this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // btnSalirVistaMesa
+            // 
+            this.btnSalirVistaMesa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnSalirVistaMesa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalirVistaMesa.Location = new System.Drawing.Point(733, 13);
+            this.btnSalirVistaMesa.Name = "btnSalirVistaMesa";
+            this.btnSalirVistaMesa.Size = new System.Drawing.Size(30, 30);
+            this.btnSalirVistaMesa.TabIndex = 0;
+            this.btnSalirVistaMesa.Text = "X";
+            this.btnSalirVistaMesa.UseVisualStyleBackColor = false;
+            this.btnSalirVistaMesa.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // DataProductos
+            // 
+            this.DataProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DataProductos.Location = new System.Drawing.Point(13, 61);
+            this.DataProductos.Name = "DataProductos";
+            this.DataProductos.ReadOnly = true;
+            this.DataProductos.Size = new System.Drawing.Size(586, 68);
+            this.DataProductos.TabIndex = 8;
             // 
             // Mesas
             // 
@@ -897,13 +891,14 @@
             this.menuMesas.PerformLayout();
             this.panelMesas.ResumeLayout(false);
             this.panelMesaNum.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DataProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -959,7 +954,6 @@
         private System.Windows.Forms.Button btnTicket;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtBoxBuscador;
-        private System.Windows.Forms.CheckedListBox listProductos;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
@@ -967,5 +961,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView DataProductos;
     }
 }

@@ -38,6 +38,8 @@
             this.btn_funcion = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.text_comprobacion = new System.Windows.Forms.Label();
+            this.btn_editarClas = new System.Windows.Forms.Button();
+            this.cmBoxClasEdit = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // textBox_precio
@@ -148,6 +150,28 @@
             this.text_comprobacion.Size = new System.Drawing.Size(0, 13);
             this.text_comprobacion.TabIndex = 9;
             // 
+            // btn_editarClas
+            // 
+            this.btn_editarClas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(131)))), ((int)(((byte)(233)))));
+            this.btn_editarClas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_editarClas.Location = new System.Drawing.Point(12, 317);
+            this.btn_editarClas.Name = "btn_editarClas";
+            this.btn_editarClas.Size = new System.Drawing.Size(75, 43);
+            this.btn_editarClas.TabIndex = 10;
+            this.btn_editarClas.Text = "Editar";
+            this.btn_editarClas.UseVisualStyleBackColor = false;
+            this.btn_editarClas.Visible = false;
+            this.btn_editarClas.Click += new System.EventHandler(this.btn_editarClas_Click);
+            // 
+            // cmBoxClasEdit
+            // 
+            this.cmBoxClasEdit.FormattingEnabled = true;
+            this.cmBoxClasEdit.Location = new System.Drawing.Point(12, 378);
+            this.cmBoxClasEdit.Name = "cmBoxClasEdit";
+            this.cmBoxClasEdit.Size = new System.Drawing.Size(121, 21);
+            this.cmBoxClasEdit.TabIndex = 11;
+            this.cmBoxClasEdit.Visible = false;
+            // 
             // Formularios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +179,8 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.cmBoxClasEdit);
+            this.Controls.Add(this.btn_editarClas);
             this.Controls.Add(this.text_comprobacion);
             this.Controls.Add(this.btn_eliminar);
             this.Controls.Add(this.btn_funcion);
@@ -166,6 +192,7 @@
             this.Controls.Add(this.textBox_precio);
             this.Name = "Formularios";
             this.Text = "Formularios";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Formularios_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +208,7 @@
         private System.Windows.Forms.Button btn_funcion;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Label text_comprobacion;
+        private System.Windows.Forms.Button btn_editarClas;
+        private System.Windows.Forms.ComboBox cmBoxClasEdit;
     }
 }

@@ -12,7 +12,31 @@ namespace AplicacionBar
 {
     public partial class Mesas : Form
     {
+        List<InterfaceProductos> AllProductos= new List<InterfaceProductos>();
+        Funciones funFunciones = new Funciones();
         List<Button> mesasList = new List<Button>();
+
+        private void listarProductos(List<InterfaceProductos> NewData = null)
+        {
+            if (NewData == null)
+            {
+                List<InterfaceProductos> productos = funFunciones.ProductGetAll();
+                AllProductos = productos;
+                DataProductos.DataSource = productos;
+            }
+            else
+            {
+                DataProductos.DataSource = NewData;
+            }
+            DataProductos.Columns[0].Visible = false;
+            DataProductos.Columns[1].Width = 250;
+            DataProductos.Columns[2].Visible = false;
+            DataProductos.Columns[3].Width = 250;
+            DataProductos.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DataProductos.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            DataProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DataProductos.CurrentCell = null;
+        }
 
         private void AgregarMesas()
         {
@@ -58,6 +82,7 @@ namespace AplicacionBar
         {
             InitializeComponent();
             AgregarMesas();
+            listarProductos();
         }
 
         private void Mesas_Load(object sender, EventArgs e)
@@ -308,6 +333,23 @@ namespace AplicacionBar
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBoxBuscador_TextChanged(object sender, EventArgs e)
+        {
+            List<InterfaceProductos> newProductos = new List<InterfaceProductos>();
+
+            foreach (InterfaceProductos indidualProducto in AllProductos)
+            {
+                if (indidualProducto.nombre.ToLower().Contains(textBox1.Text.ToLower())) newProductos.Add(indidualProducto);
+            }
+
+            listarProductos(newProductos);
         }
     }
 }
