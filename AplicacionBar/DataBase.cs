@@ -317,25 +317,37 @@ namespace AplicacionBar
         //mesas
         public InterfaceMesas MesasGet(int id)
         {
-            connection.Open();
             InterfaceMesas mesa = new InterfaceMesas();
-            string query = @"SELECT id, nombre, productos_vendidos FROM Mesas";
-
-            SqlCommand command = new SqlCommand(query, connection);
-            SqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
+            try
             {
-                if(id == Convert.ToInt32(reader["id"]))
-                {
-                    mesa.id = Convert.ToInt32(reader["id"].ToString());
-                    mesa.nombre = reader["nombre"].ToString();
-                    mesa.productos_vendidos = reader["productos_vendidos"].ToString();
-                    break;
-                }
-            }
+                connection.Open();
+                string query = @"SELECT id, nombre, productos_vendidos FROM Mesas";
 
-            if (mesa == null) return null;
+                SqlCommand command = new SqlCommand(query, connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    if (id == Convert.ToInt32(reader["id"]))
+                    {
+                        mesa.id = Convert.ToInt32(reader["id"].ToString());
+                        mesa.nombre = reader["nombre"].ToString();
+                        mesa.productos_vendidos = reader["productos_vendidos"].ToString();
+                        break;
+                    }
+                }
+
+                if (mesa == null) return null;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+                throw;
+            }
+            finally
+            {
+                connection.Close();
+            }
 
             return mesa;
         }

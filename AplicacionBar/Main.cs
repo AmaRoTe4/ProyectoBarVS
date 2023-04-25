@@ -20,7 +20,7 @@ namespace AplicacionBar
         private void btn_mesas_Click(object sender, EventArgs e)
         {
             Mesas windows = new Mesas();
-            windows.Show();
+            windows.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)

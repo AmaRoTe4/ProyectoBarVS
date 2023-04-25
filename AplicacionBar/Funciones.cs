@@ -63,13 +63,15 @@ namespace AplicacionBar
         }
 
         //mesas
-        //public InterfaceMesas MesasGet(int id)
-        //{
-        //}
+        public InterfaceMesas MesasGet(int id)
+        {
+            return objectDatabase.MesasGet(id);
+        }
 
-        //public bool MesasEdita(int id, InterfaceMesas newClass)
-        //{
-        //}
+        public bool MesasEdita(int id, InterfaceMesas newClass)
+        {
+            return objectDatabase.MesasEdita(id , newClass);
+        }
 
         //VentasDiarias diarias
         //public List<VentasDiarias> VentaDGetAll()

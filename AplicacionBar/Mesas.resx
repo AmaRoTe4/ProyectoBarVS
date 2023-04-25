@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="menuMesas.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>45</value>
   </metadata>
@@ -137,7 +134,7 @@
         YEs5a0AyTQ8FcBkLSjMURTQmUDwtZ1JAejkNpWswnWMrwohBtns5rnM0k3hqoIV2ihwN//54eCgN/vzl
         iWpa9tqRn1AadUs3aAcBqhUK829bi0gulC4QilhGrJOGikYI61xK5UY2uiUYnm9c2S4dq1kLuWMNkgwD
         //y9lmRTc1kV/epm28FNxqxCtJg3wqaRhGkdk3gmwVo70Lij9enb7tZZo4gu58eq/Omu94Ne4dXKsEAi
-        PH7CrgAAAAlwSFlzAAALDwAACw8BkvkDpQAA/UtJREFUeF7EvYuDFdWZ9Y1ERLkKGIFGBVuGEAdp27Tg
+        PH7CrgAAAAlwSFlzAAALDQAACw0B7QfALAAA/UtJREFUeF7EvYuDFdWZ9Y1ERLkKGIFGBVuGEAdp27Tg
         raNivGNUFC/glRAvRDTyJmEAMSCIhgAqF6OCQ4M4o+BMmGTQZEIiZODVP+tbaz1r1+3UuXRDvned7nPq
         VNWpqlP7V+t59q5ddYb98Id33XXX9dAdd1xzzf/50Y9+cOX3v/+97/3zP0H//M/f+973vv/971955Q9+
         8KMf/Z//c80dd1x//V13/fCHw1rqHOiCCy44P9fo0Mik84q6vEHjx4/3UFml0Zhp/Ig24jxJ57aXN8jy
