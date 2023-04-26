@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 using System.Linq;
@@ -393,7 +394,7 @@ namespace AplicacionBar
             try
             {
                 connection.Open();
-                string query = @"SELECT id, nombre, clasificacion, precio FROM VentasDiarias";
+                string query = @"SELECT * FROM VentasDiarias";
 
                 SqlCommand command = new SqlCommand(query, connection);
 
@@ -404,8 +405,8 @@ namespace AplicacionBar
                     ventas.Add(new VentasDiarias
                     {
                         id = int.Parse(reader["id"].ToString()),
-                        fecha = DateTime.Parse((string)reader["fecha"]),
-                        total = float.Parse((string)reader["total"]),
+                        fecha = reader["fecha"].ToString(),
+                        total = float.Parse(reader["total"].ToString()),
                         productos = reader["productos"].ToString(),
                     });
                 }
@@ -441,12 +442,8 @@ namespace AplicacionBar
             return venta;
         }
 
-        public bool VentaDCreate(VentasDiarias newVenta)
+        public bool VentaDCreate()
         {
-            string fechaTexto = "19/04/2023 14:30:00";
-            string formatoFecha = "dd/MM/yyyy HH:mm:ss";
-            DateTime fechaNow = DateTime.ParseExact(fechaTexto, formatoFecha, CultureInfo.InvariantCulture);
-
             try
             {
                 //remplazar name , y ver dependencias
@@ -456,9 +453,11 @@ namespace AplicacionBar
                     VALUES (@fecha, @total, @productos)
                 ";
 
-                SqlParameter fecha = new SqlParameter("@fecha", fechaNow);
-                SqlParameter total= new SqlParameter("@total", newVenta.total);
-                SqlParameter productos = new SqlParameter("@productos", newVenta.productos);
+                float valueTotal = 0;
+
+                SqlParameter fecha = new SqlParameter("@fecha", DateTime.Now.ToString("dd/MM/yyyy"));
+                SqlParameter total = new SqlParameter("@total", valueTotal);
+                SqlParameter productos = new SqlParameter("@productos", "");
                 SqlCommand command = new SqlCommand(query, connection);
 
                 command.Parameters.Add(fecha);
@@ -476,6 +475,37 @@ namespace AplicacionBar
             {
                 connection.Close();
             }
+            return true;
+        }
+
+        public bool VentaDEdita(int id, VentasDiarias newVenta)
+        {
+            try
+            {
+                connection.Open();
+                string query = @" UPDATE VentasDiarias
+                                  SET productos = @productos
+                                  WHERE id = @id ";
+
+                SqlParameter newId = new SqlParameter("@id", id);
+                SqlParameter productos = new SqlParameter("@productos_vendidos", newVenta.productos);
+
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.Add(newId);
+                command.Parameters.Add(productos);
+
+                command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+                //return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
             return true;
         }
     }

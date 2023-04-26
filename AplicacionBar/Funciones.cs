@@ -1,8 +1,12 @@
-﻿using System;
+﻿using AplicacionBar.Properties;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace AplicacionBar
 {
@@ -74,17 +78,90 @@ namespace AplicacionBar
         }
 
         //VentasDiarias diarias
-        //public List<VentasDiarias> VentaDGetAll()
-        //{
-        //}
+        public List<VentasDiarias> VentaDGetAll()
+        {
+            return objectDatabase.VentaDGetAll();
+        }
 
-        //public VentasDiarias VentaDGet(int id)
-        //{
-        //}
+        public VentasDiarias VentaDGet(int id)
+        {
+            return objectDatabase.VentaDGet(id);
+        }
 
-        //public bool VentaDCreate(VentasDiarias newClass)
-        //{
-        //}
+        public bool VentaDCreate()
+        {
+            return objectDatabase.VentaDCreate();
+        }
+
+        public bool VentaDEdita(int id , VentasDiarias newVenta)
+        {
+            return objectDatabase.VentaDEdita(id , newVenta);
+        }
+
+        public int UltimoIdForVenta()
+        {
+            List<VentasDiarias> newList =  objectDatabase.VentaDGetAll();
+            if (newList.Count == 0) return 0;
+            return newList[newList.Count - 1].id;
+        }
+
+        public void CleanForIndividualTable(int id)
+        {
+            InterfaceMesas mesa = MesasGet(id);
+
+            if (mesa.productos_vendidos == "") return;
+            VentasDiarias VentaDay =  VentaDGet(UltimoIdForVenta());
+
+            if (VentaDay.productos == "") return;
+
+            List<ProductosMesa> Productos = JsonConvert.DeserializeObject<List<ProductosMesa>>(mesa.productos_vendidos);
+            List<ProductosMesa> ProductosDay = JsonConvert.DeserializeObject<List<ProductosMesa>>(VentaDay.productos);
+
+            if (ProductosDay == null || ProductosDay.Count == 0) return;
+
+            foreach (ProductosMesa Producto in Productos)
+            {
+                bool condicional = false;
+                foreach (ProductosMesa ProductoDay in ProductosDay)
+                {
+                    if (ProductoDay.id == Producto.id)
+                    {
+                        ProductoDay.cantidad += Producto.cantidad;
+                        condicional = true;
+                        break;
+                    }
+                }
+                if (!condicional) ProductosDay.Add(Producto);
+            }
+
+            float total = 0;
+            
+            foreach (ProductosMesa ProductoDay in ProductosDay)
+            {
+                InterfaceProductos prod = ProductGet(ProductoDay.id);
+                total += ProductoDay.cantidad * prod.precio;
+            }
+
+            VentaDay.productos = JsonConvert.SerializeObject(ProductosDay);
+            VentaDay.total = total;
+            VentaDEdita(VentaDay.id, VentaDay);
+
+            mesa.productos_vendidos = "";
+            mesa.nombre = "";
+            MesasEdita(mesa.id, mesa);
+        }
+
+        public int CloseForDay()
+        {
+            string CantidadDeMesas = (string)Settings.Default["VistasMesas"];
+
+            for(int i = 0; i < CantidadDeMesas.Length; i++)
+            {
+                CleanForIndividualTable(i + 1);
+            }
+
+            return 0;
+        }
 
         public int IdForNameClass(string name)
         {

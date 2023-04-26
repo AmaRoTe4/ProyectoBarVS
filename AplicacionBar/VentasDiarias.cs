@@ -9,7 +9,7 @@ namespace AplicacionBar
     public class VentasDiarias
     {
         public int id { get; set; }
-        public DateTime fecha { get; set; }
+        public string fecha { get; set; }
         public float total { get; set; }
         public string productos { get; set; }
     }

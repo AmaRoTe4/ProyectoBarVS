@@ -34,5 +34,29 @@ namespace AplicacionBar.Properties {
                 this["VistasMesas"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string EstadoDeMesas {
+            get {
+                return ((string)(this["EstadoDeMesas"]));
+            }
+            set {
+                this["EstadoDeMesas"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int EstadoDia {
+            get {
+                return ((int)(this["EstadoDia"]));
+            }
+            set {
+                this["EstadoDia"] = value;
+            }
+        }
     }
 }

@@ -70,6 +70,7 @@
             this.btnMesa2 = new System.Windows.Forms.Button();
             this.btnMesa1 = new System.Windows.Forms.Button();
             this.panelMesaNum = new System.Windows.Forms.Panel();
+            this.Label_Estado = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Label_nombre = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -173,7 +174,7 @@
             this.panelMesas.Controls.Add(this.btnMesa1);
             this.panelMesas.Location = new System.Drawing.Point(12, 194);
             this.panelMesas.Name = "panelMesas";
-            this.panelMesas.Size = new System.Drawing.Size(1033, 273);
+            this.panelMesas.Size = new System.Drawing.Size(1033, 326);
             this.panelMesas.TabIndex = 5;
             // 
             // btnMesa34
@@ -683,6 +684,7 @@
             // panelMesaNum
             // 
             this.panelMesaNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(201)))), ((int)(((byte)(202)))));
+            this.panelMesaNum.Controls.Add(this.Label_Estado);
             this.panelMesaNum.Controls.Add(this.panel3);
             this.panelMesaNum.Controls.Add(this.panel2);
             this.panelMesaNum.Controls.Add(this.btnLimpiarVenta);
@@ -692,10 +694,21 @@
             this.panelMesaNum.Controls.Add(this.btnSalirVistaMesa);
             this.panelMesaNum.Location = new System.Drawing.Point(12, 12);
             this.panelMesaNum.Name = "panelMesaNum";
-            this.panelMesaNum.Size = new System.Drawing.Size(1036, 455);
+            this.panelMesaNum.Size = new System.Drawing.Size(1036, 508);
             this.panelMesaNum.TabIndex = 6;
             this.panelMesaNum.Visible = false;
             this.panelMesaNum.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMesaNum_Paint);
+            // 
+            // Label_Estado
+            // 
+            this.Label_Estado.AutoSize = true;
+            this.Label_Estado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label_Estado.ForeColor = System.Drawing.SystemColors.Control;
+            this.Label_Estado.Location = new System.Drawing.Point(161, 18);
+            this.Label_Estado.Name = "Label_Estado";
+            this.Label_Estado.Size = new System.Drawing.Size(81, 25);
+            this.Label_Estado.TabIndex = 2;
+            this.Label_Estado.Text = "Nombre";
             // 
             // panel3
             // 
@@ -728,14 +741,14 @@
             this.panel2.Controls.Add(this.txtBoxBuscador);
             this.panel2.Location = new System.Drawing.Point(153, 49);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(862, 397);
+            this.panel2.Size = new System.Drawing.Size(862, 445);
             this.panel2.TabIndex = 5;
             // 
             // Cantidad
             // 
             this.Cantidad.AutoSize = true;
             this.Cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cantidad.Location = new System.Drawing.Point(521, 140);
+            this.Cantidad.Location = new System.Drawing.Point(521, 186);
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.Size = new System.Drawing.Size(97, 25);
             this.Cantidad.TabIndex = 9;
@@ -747,14 +760,14 @@
             this.DataProductos.Location = new System.Drawing.Point(13, 61);
             this.DataProductos.Name = "DataProductos";
             this.DataProductos.ReadOnly = true;
-            this.DataProductos.Size = new System.Drawing.Size(831, 68);
+            this.DataProductos.Size = new System.Drawing.Size(831, 116);
             this.DataProductos.TabIndex = 8;
             // 
             // DataCompra
             // 
             this.DataCompra.AllowUserToDeleteRows = false;
             this.DataCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataCompra.Location = new System.Drawing.Point(13, 172);
+            this.DataCompra.Location = new System.Drawing.Point(13, 218);
             this.DataCompra.Name = "DataCompra";
             this.DataCompra.ReadOnly = true;
             this.DataCompra.Size = new System.Drawing.Size(831, 211);
@@ -766,7 +779,7 @@
             // 
             this.btn_Agregar.BackColor = System.Drawing.Color.Green;
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Agregar.Location = new System.Drawing.Point(732, 137);
+            this.btn_Agregar.Location = new System.Drawing.Point(732, 183);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(112, 28);
             this.btn_Agregar.TabIndex = 6;
@@ -777,7 +790,7 @@
             // textBoxCantidad
             // 
             this.textBoxCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCantidad.Location = new System.Drawing.Point(625, 137);
+            this.textBoxCantidad.Location = new System.Drawing.Point(625, 183);
             this.textBoxCantidad.Multiline = true;
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(101, 28);
@@ -800,18 +813,19 @@
             // 
             this.btnLimpiarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
             this.btnLimpiarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarVenta.Location = new System.Drawing.Point(14, 409);
+            this.btnLimpiarVenta.Location = new System.Drawing.Point(14, 457);
             this.btnLimpiarVenta.Name = "btnLimpiarVenta";
             this.btnLimpiarVenta.Size = new System.Drawing.Size(125, 37);
             this.btnLimpiarVenta.TabIndex = 4;
             this.btnLimpiarVenta.Text = "Limpiar";
             this.btnLimpiarVenta.UseVisualStyleBackColor = false;
+            this.btnLimpiarVenta.Click += new System.EventHandler(this.btnLimpiarVenta_Click);
             // 
             // btnCerrarVenta
             // 
-            this.btnCerrarVenta.BackColor = System.Drawing.Color.Green;
+            this.btnCerrarVenta.BackColor = System.Drawing.Color.Red;
             this.btnCerrarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarVenta.Location = new System.Drawing.Point(14, 366);
+            this.btnCerrarVenta.Location = new System.Drawing.Point(14, 414);
             this.btnCerrarVenta.Name = "btnCerrarVenta";
             this.btnCerrarVenta.Size = new System.Drawing.Size(125, 37);
             this.btnCerrarVenta.TabIndex = 3;
@@ -823,12 +837,13 @@
             // 
             this.btnTicket.BackColor = System.Drawing.Color.Green;
             this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTicket.Location = new System.Drawing.Point(14, 323);
+            this.btnTicket.Location = new System.Drawing.Point(14, 371);
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(125, 37);
             this.btnTicket.TabIndex = 2;
             this.btnTicket.Text = "Ticket";
             this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // panel1
             // 
@@ -870,7 +885,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1058, 479);
+            this.ClientSize = new System.Drawing.Size(1058, 532);
             this.Controls.Add(this.panelMesaNum);
             this.Controls.Add(this.panelMesas);
             this.Controls.Add(this.btnAccionesDeMesas);
@@ -885,6 +900,7 @@
             this.Load += new System.EventHandler(this.Mesas_Load);
             this.panelMesas.ResumeLayout(false);
             this.panelMesaNum.ResumeLayout(false);
+            this.panelMesaNum.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -954,5 +970,6 @@
         private System.Windows.Forms.Label Label_N_mesa;
         private System.Windows.Forms.DataGridView DataProductos;
         private System.Windows.Forms.Label Cantidad;
+        private System.Windows.Forms.Label Label_Estado;
     }
 }

@@ -111,10 +111,33 @@ namespace AplicacionBar
             DataCompra.CurrentCell = null;
         }
 
+        private void ActicionesDeDia()
+        {
+            int dia = (int)Settings.Default["EstadoDia"];
+            string estados = "";
+
+            for (int i = 0; i < 36; i++)
+            {
+                estados += dia == 0 ? 'v' : 'f';
+            }
+
+            Settings.Default["EstadoDeMesas"] = estados;
+
+            if (dia == 0)
+            {
+                funFunciones.VentaDCreate();
+            }
+
+            Settings.Default["EstadoDia"] = dia == 0 ? funFunciones.UltimoIdForVenta() : funFunciones.CloseForDay();
+            Settings.Default.Save();
+
+            estadoBtnDia();
+        }
+
         //funcion en mesas individuales
         private void AgregarProductoALaMesa(ProductosMesa newProducto)
         {
-            if(MesaSelect.productos_vendidos == "" || MesaSelect.productos_vendidos == null)
+            if (MesaSelect.productos_vendidos == "" || MesaSelect.productos_vendidos == null)
             {
                 List<ProductosMesa> Productos = new List<ProductosMesa>();
                 Productos.Add(newProducto);
@@ -226,6 +249,20 @@ namespace AplicacionBar
             mesasList.Add(btnMesa36);
         }
 
+        private void estadoBtnDia()
+        {
+            int dia = (int)Settings.Default["EstadoDia"];
+
+            if (dia != 0)
+            {
+                btnAccionesDeMesas.Text = "Cerrar Dia";
+                btnAccionesDeMesas.BackColor = Color.FromArgb(255, 0, 0);
+                return;
+            }
+            btnAccionesDeMesas.Text = "Abrir Dia";
+            btnAccionesDeMesas.BackColor = Color.FromArgb(0, 255, 0);
+        }
+
         private void AlertaBorrado()
         {
             string message = "Si quiero BORRAR el producto seleccione si";
@@ -243,8 +280,18 @@ namespace AplicacionBar
         {
             InitializeComponent();
             AgregarMesas();
+            estadoBtnDia();
             listarProductos();
             VerMesas();
+        }
+
+        private void cerrarInterfaceActual()
+        {
+            panelMesaNum.Visible = false;
+            this.ControlBox = true;
+
+            //guardar cambios
+            funFunciones.MesasEdita(MesaSelect.id, MesaSelect);
         }
 
         private void Mesas_Load(object sender, EventArgs e)
@@ -257,348 +304,205 @@ namespace AplicacionBar
             agregarMesa();
         }
 
-
         private void btnEliminarMesa_Click(object sender, EventArgs e)
         {
             borrarMesa();
         }
 
+        private void AbrirInterface(int numero)
+        {
+            string estados = (string)Settings.Default["EstadoDeMesas"];
+            int dia = (int)Settings.Default["EstadoDia"];
+            if (dia == 0
+            //|| estados[numero - 1] == 'f'
+            ) return;
+
+            if (estados[numero - 1] == 'f')
+            {
+                btn_Agregar.Enabled = false;
+                Label_Estado.Text = "Inhabilitado";
+                Label_Estado.ForeColor = Color.Red;
+            }
+            else { 
+                btn_Agregar.Enabled = true;
+                Label_Estado.Text = "Habilitado";
+                Label_Estado.ForeColor = Color.Green;
+            }
+            
+
+            MesaSelect = funFunciones.MesasGet(numero);
+            Label_N_mesa.Text = "Mesa N°" + numero;
+            panelMesaNum.Visible = true;
+            asignarValoresDeMesas();
+            this.ControlBox = false;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            panelMesaNum.Visible = false;
-            this.ControlBox = true;
-
-            //guardar cambios
-            funFunciones.MesasEdita(MesaSelect.id, MesaSelect);
+            cerrarInterfaceActual();
         }
 
         private void btnMesa1_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(1);
-            Label_N_mesa.Text = "Mesa N°1";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(1);
         }
-
         private void btnMesa2_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(2);
-            Label_N_mesa.Text = "Mesa N°2";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(2);
         }
-
         private void btnMesa3_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(3);
-            Label_N_mesa.Text = "Mesa N°3";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(3);
         }
-
         private void btnMesa4_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(4);
-            Label_N_mesa.Text = "Mesa N°4";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(4);
         }
-
         private void btnMesa5_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(5);
-            Label_N_mesa.Text = "Mesa N°5";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(5);
         }
-
         private void btnMesa6_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(6);
-            Label_N_mesa.Text = "Mesa N°6";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(6);
         }
-
         private void btnMesa7_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(7);
-            Label_N_mesa.Text = "Mesa N°7";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(7);
         }
-
         private void btnMesa8_Click(object sender, EventArgs e)
         {
-            panelMesaNum.Visible = true;
-            MesaSelect = funFunciones.MesasGet(8);
-            Label_N_mesa.Text = "Mesa N°8";
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(8);
         }
-
         private void button8_Click(object sender, EventArgs e)
         {
-            //este es el boton 9
-            panelMesaNum.Visible = true;
-            MesaSelect = funFunciones.MesasGet(9);
-            Label_N_mesa.Text = "Mesa N°9";
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(9);
         }
-
         private void btnMesa10_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(10);
-            Label_N_mesa.Text = "Mesa N°10";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(10);
         }
-
         private void btnMesa11_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(11);
-            Label_N_mesa.Text = "Mesa N°11";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(11);
         }
-
         private void btnMesa12_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(12);
-            Label_N_mesa.Text = "Mesa N°12";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(12);
         }
-
         private void btnMesa13_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(13);
-            Label_N_mesa.Text = "Mesa N°13";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(13);
         }
-
         private void btnMesa14_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(14);
-            Label_N_mesa.Text = "Mesa N°14";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(14);
         }
-
         private void btnMesa15_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(15);
-            Label_N_mesa.Text = "Mesa N°15";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(15);
         }
-
         private void btnMesa16_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(16);
-            Label_N_mesa.Text = "Mesa N°16";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(16);
         }
-
         private void btnMesa17_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(17);
-            Label_N_mesa.Text = "Mesa N°17";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(17);
         }
-
         private void btnMesa18_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(18);
-            Label_N_mesa.Text = "Mesa N°18";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(18);
         }
-
         private void btnMesa19_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(19);
-            Label_N_mesa.Text = "Mesa N°19";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(19);
         }
-
         private void btnMesa20_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(20);
-            Label_N_mesa.Text = "Mesa N°20";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(20);
         }
-
         private void btnMesa21_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(21);
-            Label_N_mesa.Text = "Mesa N°21";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(21);
         }
-
         private void btnMesa22_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(22);
-            Label_N_mesa.Text = "Mesa N°22";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(22);
         }
-
         private void btnMesa23_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(23);
-            Label_N_mesa.Text = "Mesa N°23";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(23);
         }
-
         private void btnMesa24_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(24);
-            Label_N_mesa.Text = "Mesa N°24";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(24);
         }
-
         private void btnMesa25_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(25);
-            Label_N_mesa.Text = "Mesa N°25";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(25);
         }
-
         private void btnMesa26_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(26);
-            Label_N_mesa.Text = "Mesa N°26";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(26);
         }
-
         private void btnMesa27_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(27);
-            Label_N_mesa.Text = "Mesa N°27";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(27);
         }
-
         private void btnMesa28_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(28);
-            Label_N_mesa.Text = "Mesa N°28";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(28);
         }
-
         private void btnMesa29_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(29);
-            Label_N_mesa.Text = "Mesa N°29";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(29);
         }
-
         private void btnMesa30_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(30);
-            Label_N_mesa.Text = "Mesa N°30";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(30);
         }
-
         private void btnMesa31_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(31);
-            Label_N_mesa.Text = "Mesa N°31";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(31);
         }
-        private void btnMesa32_Click(object sender, EventArgs e)
+       void btnMesa32_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(32);
-            Label_N_mesa.Text = "Mesa N°32";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(32);
         }
-        private void btnMesa33_Click(object sender, EventArgs e)
+       void btnMesa33_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(33);
-            Label_N_mesa.Text = "Mesa N°33";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(33);
         }
-        private void btnMesa34_Click(object sender, EventArgs e)
+       void btnMesa34_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(34);
-            Label_N_mesa.Text = "Mesa N°34";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(34);
         }
-        private void btnMesa35_Click(object sender, EventArgs e)
+       void btnMesa35_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(35);
-            Label_N_mesa.Text = "Mesa N°35";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(35);
         }
-        private void btnMesa36_Click(object sender, EventArgs e)
+       void btnMesa36_Click(object sender, EventArgs e)
         {
-            MesaSelect = funFunciones.MesasGet(36);
-            Label_N_mesa.Text = "Mesa N°36";
-            panelMesaNum.Visible = true;
-            asignarValoresDeMesas();
-            this.ControlBox = false;
+            AbrirInterface(36);
         }
-        private void panelMesaNum_Paint(object sender, PaintEventArgs e)
+       void panelMesaNum_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
         private void btnAccionesDeMesas_Click(object sender, EventArgs e)
         {
+            int dia = (int)Settings.Default["EstadoDia"];
+            string message = dia != 0 ? "Estas Seguro de que quieres Cerrar el dia?" : "Estas Seguro de que quieres Abrir el dia?";
+            string caption = "";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
 
+            DialogResult result = MessageBox.Show(message, caption, buttons);
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                ActicionesDeDia();
+            }
         }
 
         private void labNombre_Click(object sender, EventArgs e)
@@ -608,7 +512,31 @@ namespace AplicacionBar
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //cerrar venta
+            int dia = (int)Settings.Default["EstadoDia"];
 
+            if (dia == 0) {
+                MessageBox.Show("Accion inhabilidata");
+                return;
+            }
+
+            
+            string estados = (string)Settings.Default["EstadoDeMesas"];
+            string newEstados = "";
+
+            for(int i = 0; i < estados.Length; i++)
+            {
+                if (i == MesaSelect.id - 1 || estados[i] == 'f') newEstados += "f";
+                else newEstados += "v";
+            }
+
+            btnCerrarVenta.Enabled = false;
+            btnTicket.Enabled = true;
+            btnLimpiarVenta.Enabled = true;
+
+            Settings.Default["EstadoDeMesas"] = newEstados;
+            Settings.Default.Save();
+            cerrarInterfaceActual();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -668,10 +596,11 @@ namespace AplicacionBar
 
             foreach (Button mesa in mesasList)
             {
-                if(mesa.Visible) newString = newString + "0";
+                if(mesa.Visible) newString += "0";
             }
 
             Settings.Default["VistasMesas"] = newString;
+            Settings.Default.Save();
         }
 
         private void DataCompra_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -682,6 +611,17 @@ namespace AplicacionBar
         private void DataCompra_KeyDown(object sender, KeyEventArgs e)
         {
             AlertaBorrado();
+        }
+
+        private void btnTicket_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLimpiarVenta_Click(object sender, EventArgs e)
+        {
+            //aca lo que vamos hacer es limpiar y agregar una mesa de forma individual
+            funFunciones.CleanForIndividualTable(MesaSelect.id);
         }
     }
 }
