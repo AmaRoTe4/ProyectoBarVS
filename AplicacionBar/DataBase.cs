@@ -484,15 +484,17 @@ namespace AplicacionBar
             {
                 connection.Open();
                 string query = @" UPDATE VentasDiarias
-                                  SET productos = @productos
+                                  SET productos = @productos , total = @total
                                   WHERE id = @id ";
 
                 SqlParameter newId = new SqlParameter("@id", id);
-                SqlParameter productos = new SqlParameter("@productos_vendidos", newVenta.productos);
+                SqlParameter productos = new SqlParameter("@productos", newVenta.productos);
+                SqlParameter total = new SqlParameter("@total", newVenta.total);
 
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.Add(newId);
                 command.Parameters.Add(productos);
+                command.Parameters.Add(total);
 
                 command.ExecuteNonQuery();
             }

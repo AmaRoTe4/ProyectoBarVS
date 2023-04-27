@@ -773,6 +773,7 @@
             this.DataCompra.Size = new System.Drawing.Size(831, 211);
             this.DataCompra.TabIndex = 7;
             this.DataCompra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataCompra_CellClick);
+            this.DataCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataCompra_CellContentClick);
             this.DataCompra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataCompra_KeyDown);
             // 
             // btn_Agregar
@@ -811,7 +812,8 @@
             // 
             // btnLimpiarVenta
             // 
-            this.btnLimpiarVenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(18)))), ((int)(((byte)(18)))));
+            this.btnLimpiarVenta.BackColor = System.Drawing.Color.Gray;
+            this.btnLimpiarVenta.Enabled = false;
             this.btnLimpiarVenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarVenta.Location = new System.Drawing.Point(14, 457);
             this.btnLimpiarVenta.Name = "btnLimpiarVenta";
@@ -835,7 +837,8 @@
             // 
             // btnTicket
             // 
-            this.btnTicket.BackColor = System.Drawing.Color.Green;
+            this.btnTicket.BackColor = System.Drawing.Color.Gray;
+            this.btnTicket.Enabled = false;
             this.btnTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTicket.Location = new System.Drawing.Point(14, 371);
             this.btnTicket.Name = "btnTicket";
@@ -843,6 +846,7 @@
             this.btnTicket.TabIndex = 2;
             this.btnTicket.Text = "Ticket";
             this.btnTicket.UseVisualStyleBackColor = false;
+            this.btnTicket.Visible = false;
             this.btnTicket.Click += new System.EventHandler(this.btnTicket_Click);
             // 
             // panel1
@@ -891,6 +895,8 @@
             this.Controls.Add(this.btnAccionesDeMesas);
             this.Controls.Add(this.btnEliminarMesa);
             this.Controls.Add(this.btnAgregarMesa);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Mesas";

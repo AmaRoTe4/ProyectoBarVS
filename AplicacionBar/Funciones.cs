@@ -105,19 +105,25 @@ namespace AplicacionBar
             return newList[newList.Count - 1].id;
         }
 
-        public void CleanForIndividualTable(int id)
+        public bool CleanForIndividualTable(int id)
         {
-            InterfaceMesas mesa = MesasGet(id);
+            InterfaceMesas mesa = objectDatabase.MesasGet(id);
 
-            if (mesa.productos_vendidos == "") return;
-            VentasDiarias VentaDay =  VentaDGet(UltimoIdForVenta());
-
-            if (VentaDay.productos == "") return;
-
+            if (mesa.productos_vendidos == "") return false;
+            VentasDiarias VentaDay =  objectDatabase.VentaDGet(UltimoIdForVenta());
+            List<ProductosMesa> ProductosDay = new List<ProductosMesa>();
             List<ProductosMesa> Productos = JsonConvert.DeserializeObject<List<ProductosMesa>>(mesa.productos_vendidos);
-            List<ProductosMesa> ProductosDay = JsonConvert.DeserializeObject<List<ProductosMesa>>(VentaDay.productos);
 
-            if (ProductosDay == null || ProductosDay.Count == 0) return;
+            if (VentaDay.productos == null || VentaDay.productos == "")
+            {
+                 ProductosDay = JsonConvert.DeserializeObject<List<ProductosMesa>>("[]");
+            }
+            else
+            {
+                 ProductosDay = JsonConvert.DeserializeObject<List<ProductosMesa>>(VentaDay.productos);
+            }
+
+            if (ProductosDay == null) return false;
 
             foreach (ProductosMesa Producto in Productos)
             {
@@ -138,29 +144,31 @@ namespace AplicacionBar
             
             foreach (ProductosMesa ProductoDay in ProductosDay)
             {
-                InterfaceProductos prod = ProductGet(ProductoDay.id);
-                total += ProductoDay.cantidad * prod.precio;
+                InterfaceProductos prod = objectDatabase.ProductGet(ProductoDay.id);
+                if(prod != null) total += (ProductoDay.cantidad * prod.precio);
             }
 
-            VentaDay.productos = JsonConvert.SerializeObject(ProductosDay);
             VentaDay.total = total;
-            VentaDEdita(VentaDay.id, VentaDay);
+            VentaDay.productos = JsonConvert.SerializeObject(ProductosDay);
+            objectDatabase.VentaDEdita(VentaDay.id, VentaDay);
 
             mesa.productos_vendidos = "";
             mesa.nombre = "";
-            MesasEdita(mesa.id, mesa);
+            objectDatabase.MesasEdita(mesa.id, mesa);
+
+            return true;
         }
 
-        public int CloseForDay()
+        public void CloseForDay()
         {
             string CantidadDeMesas = (string)Settings.Default["VistasMesas"];
 
             for(int i = 0; i < CantidadDeMesas.Length; i++)
             {
-                CleanForIndividualTable(i + 1);
+                bool respuesta = CleanForIndividualTable(i + 1);
             }
 
-            return 0;
+            return;
         }
 
         public int IdForNameClass(string name)

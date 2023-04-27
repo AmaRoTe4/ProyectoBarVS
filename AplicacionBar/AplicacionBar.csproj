@@ -87,11 +87,11 @@
   <ItemGroup>
     <Compile Include="Clasificacion.cs" />
     <Compile Include="DataBase.cs" />
-    <Compile Include="fechaIndividual.cs">
+    <Compile Include="FechaIndividual.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fechaIndividual.Designer.cs">
-      <DependentUpon>fechaIndividual.cs</DependentUpon>
+    <Compile Include="FechaIndividual.Designer.cs">
+      <DependentUpon>FechaIndividual.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios.cs">
       <SubType>Form</SubType>
@@ -143,8 +143,8 @@
       <DependentUpon>Totales.cs</DependentUpon>
     </Compile>
     <Compile Include="VentasDiarias.cs" />
-    <EmbeddedResource Include="fechaIndividual.resx">
-      <DependentUpon>fechaIndividual.cs</DependentUpon>
+    <EmbeddedResource Include="FechaIndividual.resx">
+      <DependentUpon>FechaIndividual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios.resx">
       <DependentUpon>Formularios.cs</DependentUpon>

@@ -29,46 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Totales));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Numeracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad_de_productos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.GridTotales = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.GridTotales)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // GridTotales
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Numeracion,
-            this.Fecha,
-            this.Cantidad_de_productos,
-            this.Total});
-            this.dataGridView1.Location = new System.Drawing.Point(184, 118);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(444, 301);
-            this.dataGridView1.TabIndex = 1;
-            // 
-            // Numeracion
-            // 
-            this.Numeracion.HeaderText = "N°";
-            this.Numeracion.Name = "Numeracion";
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            // 
-            // Cantidad_de_productos
-            // 
-            this.Cantidad_de_productos.HeaderText = "Cant. Prod.";
-            this.Cantidad_de_productos.Name = "Cantidad_de_productos";
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
+            this.GridTotales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridTotales.Location = new System.Drawing.Point(184, 118);
+            this.GridTotales.Name = "GridTotales";
+            this.GridTotales.Size = new System.Drawing.Size(444, 301);
+            this.GridTotales.TabIndex = 1;
+            this.GridTotales.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotales_CellClick);
+            this.GridTotales.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridTotales_CellContentClick);
+            this.GridTotales.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GridTotales_KeyDown);
             // 
             // Totales
             // 
@@ -77,20 +51,22 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.GridTotales);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Totales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Totales";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Totales_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GridTotales)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Numeracion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad_de_productos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.DataGridView GridTotales;
     }
 }

@@ -43,7 +43,7 @@
             this.btn_mesas.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_mesas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mesas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mesas.Location = new System.Drawing.Point(223, 78);
+            this.btn_mesas.Location = new System.Drawing.Point(116, 170);
             this.btn_mesas.Margin = new System.Windows.Forms.Padding(0);
             this.btn_mesas.Name = "btn_mesas";
             this.btn_mesas.Size = new System.Drawing.Size(168, 141);
@@ -60,7 +60,7 @@
             this.btn_productos.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_productos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_productos.Location = new System.Drawing.Point(223, 262);
+            this.btn_productos.Location = new System.Drawing.Point(337, 170);
             this.btn_productos.Margin = new System.Windows.Forms.Padding(0);
             this.btn_productos.Name = "btn_productos";
             this.btn_productos.Size = new System.Drawing.Size(168, 141);
@@ -77,13 +77,14 @@
             this.btn_nosotros.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_nosotros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_nosotros.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_nosotros.Location = new System.Drawing.Point(436, 262);
+            this.btn_nosotros.Location = new System.Drawing.Point(662, 341);
             this.btn_nosotros.Margin = new System.Windows.Forms.Padding(0);
             this.btn_nosotros.Name = "btn_nosotros";
             this.btn_nosotros.Size = new System.Drawing.Size(168, 141);
             this.btn_nosotros.TabIndex = 3;
             this.btn_nosotros.Text = "Nosotros";
             this.btn_nosotros.UseVisualStyleBackColor = false;
+            this.btn_nosotros.Visible = false;
             this.btn_nosotros.Click += new System.EventHandler(this.btn_nosotros_Click);
             // 
             // btn_estadisticas
@@ -94,7 +95,7 @@
             this.btn_estadisticas.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btn_estadisticas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_estadisticas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_estadisticas.Location = new System.Drawing.Point(436, 78);
+            this.btn_estadisticas.Location = new System.Drawing.Point(567, 170);
             this.btn_estadisticas.Margin = new System.Windows.Forms.Padding(0);
             this.btn_estadisticas.Name = "btn_estadisticas";
             this.btn_estadisticas.Size = new System.Drawing.Size(168, 141);
@@ -114,7 +115,12 @@
             this.Controls.Add(this.btn_estadisticas);
             this.Controls.Add(this.btn_productos);
             this.Controls.Add(this.btn_mesas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.ResumeLayout(false);
 

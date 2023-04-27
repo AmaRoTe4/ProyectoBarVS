@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using AplicacionBar.Properties;
 using Newtonsoft.Json;
+using System.Drawing.Printing;
 
 namespace AplicacionBar
 {
@@ -77,6 +78,15 @@ namespace AplicacionBar
             if (NewData == null) return;
             List<ProductosMesaVista> Data = new List<ProductosMesaVista>();
 
+            float precioTotal = 0;
+            int cantidadTotal = 0;
+            
+            if(AllProductos.Count == 0)
+            {
+                MessageBox.Show("Error de Comprobacion");
+                return;
+            }
+
             foreach (ProductosMesa ProdMesa in NewData)
             {
                 foreach (InterfaceProductos Produc in AllProductos)
@@ -89,13 +99,25 @@ namespace AplicacionBar
                         nwData.cantidad = ProdMesa.cantidad;
                         nwData.precio = ProdMesa.cantidad * Produc.precio;
 
+                        precioTotal += ProdMesa.cantidad * Produc.precio;
+                        cantidadTotal += ProdMesa.cantidad;
+
                         Data.Add(nwData);
+                        break;
                     }
                 }
             }
 
+            ProductosMesaVista total = new ProductosMesaVista();
+            total.id = 0;
+            total.nombre = "Total";
+            total.cantidad = cantidadTotal;
+            total.precio = precioTotal;
+            Data.Add(total);
+
             DataCompra.DataSource = Data;
 
+            DataCompra.Rows[DataCompra.Rows.Count - 1].DefaultCellStyle.BackColor = Color.Green;
             //id oculto
             DataCompra.Columns[0].Visible = false;
             //nombre
@@ -126,11 +148,14 @@ namespace AplicacionBar
             if (dia == 0)
             {
                 funFunciones.VentaDCreate();
+                Settings.Default["EstadoDia"] = funFunciones.UltimoIdForVenta();
             }
-
-            Settings.Default["EstadoDia"] = dia == 0 ? funFunciones.UltimoIdForVenta() : funFunciones.CloseForDay();
+            else
+            {
+                funFunciones.CloseForDay();
+                Settings.Default["EstadoDia"] = 0;
+            }
             Settings.Default.Save();
-
             estadoBtnDia();
         }
 
@@ -285,13 +310,73 @@ namespace AplicacionBar
             VerMesas();
         }
 
-        private void cerrarInterfaceActual()
+        private void CartelDeEstado()
         {
-            panelMesaNum.Visible = false;
-            this.ControlBox = true;
+            string estados = (string)Settings.Default["EstadoDeMesas"];
+            int numero = MesaSelect.id;
+
+            if (numero == null || numero == 0) return;
+
+            if (estados[numero - 1] == 'f')
+            {
+                btn_Agregar.Enabled = false;
+                Label_Estado.Text = "Inhabilitado";
+                Label_Estado.ForeColor = Color.Red;
+                btnCerrarVenta.Enabled = false;
+                btnCerrarVenta.BackColor = Color.Gray;
+                btnTicket.Enabled = true;
+                btnTicket.BackColor = Color.Green;
+                btnLimpiarVenta.Enabled = true;
+                btnLimpiarVenta.BackColor = Color.Red;
+                btn_Agregar.Enabled = false;
+                btn_Agregar.BackColor = Color.Gray;
+                DataCompra.Enabled = false;
+            }
+            else
+            {
+                btn_Agregar.Enabled = true;
+                Label_Estado.Text = "Habilitado";
+                Label_Estado.ForeColor = Color.Green;
+                btnCerrarVenta.Enabled = true;
+                btnCerrarVenta.BackColor = Color.Red;
+                btnTicket.Enabled = false;
+                btnTicket.BackColor = Color.Gray;
+                btnLimpiarVenta.Enabled = false;
+                btnLimpiarVenta.BackColor = Color.Gray;
+                btn_Agregar.Enabled = true;
+                btn_Agregar.BackColor = Color.Green;
+                DataCompra.Enabled = true;
+            }
+        }
+
+        private void modificarEstadoMesa(int accion)
+        {
+            //cartel
+            CartelDeEstado();
 
             //guardar cambios
-            funFunciones.MesasEdita(MesaSelect.id, MesaSelect);
+            bool estadofun = funFunciones.MesasEdita(MesaSelect.id, MesaSelect);
+            if (!estadofun) MessageBox.Show("Error a la Hora de Cerrar");
+        
+            if(accion == 2)
+            {
+                DataCompra.DataSource = null;
+                MesaSelect.nombre = "";
+                MesaSelect.productos_vendidos = "";
+            }
+        }
+
+        private void cerrarInterfaceActual()
+        {
+            
+                panelMesaNum.Visible = false;
+                this.ControlBox = true;
+                bool respuesta = funFunciones.MesasEdita(MesaSelect.id, MesaSelect);
+                if (!respuesta) return;
+                
+                MesaSelect = null;
+                DataCompra.DataSource = null;
+                return;
         }
 
         private void Mesas_Load(object sender, EventArgs e)
@@ -311,29 +396,19 @@ namespace AplicacionBar
 
         private void AbrirInterface(int numero)
         {
-            string estados = (string)Settings.Default["EstadoDeMesas"];
             int dia = (int)Settings.Default["EstadoDia"];
-            if (dia == 0
-            //|| estados[numero - 1] == 'f'
-            ) return;
-
-            if (estados[numero - 1] == 'f')
+            if (dia == 0)
             {
-                btn_Agregar.Enabled = false;
-                Label_Estado.Text = "Inhabilitado";
-                Label_Estado.ForeColor = Color.Red;
+                MessageBox.Show("Esta accion es invalida ya que no esta el dia inicializado");
+                return;
             }
-            else { 
-                btn_Agregar.Enabled = true;
-                Label_Estado.Text = "Habilitado";
-                Label_Estado.ForeColor = Color.Green;
-            }
-            
 
-            MesaSelect = funFunciones.MesasGet(numero);
+            InterfaceMesas mesa = funFunciones.MesasGet(numero);
+            MesaSelect = mesa;
             Label_N_mesa.Text = "Mesa N°" + numero;
             panelMesaNum.Visible = true;
             asignarValoresDeMesas();
+            CartelDeEstado();
             this.ControlBox = false;
         }
 
@@ -520,7 +595,6 @@ namespace AplicacionBar
                 return;
             }
 
-            
             string estados = (string)Settings.Default["EstadoDeMesas"];
             string newEstados = "";
 
@@ -530,13 +604,12 @@ namespace AplicacionBar
                 else newEstados += "v";
             }
 
-            btnCerrarVenta.Enabled = false;
-            btnTicket.Enabled = true;
-            btnLimpiarVenta.Enabled = true;
+            //pasar numero
+            CartelDeEstado();
 
             Settings.Default["EstadoDeMesas"] = newEstados;
             Settings.Default.Save();
-            cerrarInterfaceActual();
+            modificarEstadoMesa(1);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -564,16 +637,17 @@ namespace AplicacionBar
 
             ProductosMesa newProducto = new ProductosMesa();
 
+            if (Convert.ToInt32(DataProductos.SelectedRows[0].Cells[0].Value) == null)
+            {
+                MessageBox.Show("Asigancion Erronea");
+                return;
+            }
+
             newProducto.id = Convert.ToInt32(DataProductos.SelectedRows[0].Cells[0].Value);
             newProducto.cantidad = Convert.ToInt32(textBoxCantidad.Text);
 
             textBoxCantidad.Text = "1";
 
-            if (newProducto.id == null)
-            {
-                MessageBox.Show("Asigancion Erronea");
-                return;
-            }
 
             AgregarProductoALaMesa(newProducto);
         }
@@ -620,8 +694,34 @@ namespace AplicacionBar
 
         private void btnLimpiarVenta_Click(object sender, EventArgs e)
         {
+            int dia = (int)Settings.Default["EstadoDia"];
+
+            if (dia == 0)
+            {
+                MessageBox.Show("Accion inhabilidata");
+                return;
+            }
+
             //aca lo que vamos hacer es limpiar y agregar una mesa de forma individual
             funFunciones.CleanForIndividualTable(MesaSelect.id);
+
+            string estados = (string)Settings.Default["EstadoDeMesas"];
+            string newEstados = "";
+
+            for (int i = 0; i < estados.Length; i++)
+            {
+                if (i == MesaSelect.id - 1 || estados[i] != 'f') newEstados += "v";
+                else newEstados += "f";
+            }
+
+            Settings.Default["EstadoDeMesas"] = newEstados;
+            Settings.Default.Save();
+            modificarEstadoMesa(2);
+        }
+
+        private void DataCompra_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
