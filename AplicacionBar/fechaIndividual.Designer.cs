@@ -40,9 +40,11 @@
             // 
             // DataDay
             // 
+            this.DataDay.AllowUserToDeleteRows = false;
             this.DataDay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataDay.Location = new System.Drawing.Point(12, 108);
             this.DataDay.Name = "DataDay";
+            this.DataDay.ReadOnly = true;
             this.DataDay.Size = new System.Drawing.Size(776, 276);
             this.DataDay.TabIndex = 0;
             // 

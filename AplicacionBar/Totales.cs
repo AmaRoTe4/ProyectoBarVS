@@ -32,11 +32,13 @@ namespace AplicacionBar
 
         private void ListarTotales()
         {
-            List<VentasDiarias> productos = funFunciones.VentaDGetAll();
+            List<VentasDiarias> Ventas = funFunciones.VentaDGetAll();
             int dia = (int)Settings.Default["EstadoDia"];
-            if (dia != 0) productos.RemoveAt(productos.Count - 1);
+            if (dia != 0) Ventas.RemoveAt(Ventas.Count - 1);
             
-            GridTotales.DataSource = productos;
+            Ventas.Reverse();
+
+            GridTotales.DataSource = Ventas;
             GridTotales.Columns[0].HeaderText = "N°"; 
             GridTotales.Columns[0].Width = 55;
 
@@ -46,11 +48,10 @@ namespace AplicacionBar
             GridTotales.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             GridTotales.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
            
-
             GridTotales.Columns[3].Visible = false;
 
-            //GridTotales.Columns[4].HeaderText = "Cant. Prod";
             //GridTotales.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //GridTotales.Columns[4].HeaderText = "Cant. Prod";
             //GridTotales.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             
             GridTotales.SelectionMode = DataGridViewSelectionMode.FullRowSelect;

@@ -44,7 +44,7 @@
             this.GridData.ReadOnly = true;
             this.GridData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.GridData.Size = new System.Drawing.Size(776, 318);
-            this.GridData.TabIndex = 0;
+            this.GridData.TabIndex = 2;
             this.GridData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.GridData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.GridData.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridData_CellEnter);
@@ -68,6 +68,7 @@
             this.btn_filtro.Name = "btn_filtro";
             this.btn_filtro.Size = new System.Drawing.Size(47, 31);
             this.btn_filtro.TabIndex = 2;
+            this.btn_filtro.TabStop = false;
             this.btn_filtro.Text = "F";
             this.btn_filtro.UseVisualStyleBackColor = true;
             this.btn_filtro.Visible = false;

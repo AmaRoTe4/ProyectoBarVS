@@ -624,7 +624,20 @@ namespace AplicacionBar
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if(Convert.ToInt32(textBoxCantidad.Text) < 1)
+            if (textBoxCantidad.Text == "")
+            {
+                MessageBox.Show("Debe ingresar algun valor numerico en la casilla cantidad");
+                return;
+            }
+
+            if (textBoxCantidad.Text == null) { 
+                MessageBox.Show("Debe ingresar solo numero");
+                return;
+            }
+
+            int cantidad = Convert.ToInt32(textBoxCantidad.Text);
+
+            if(cantidad < 1)
             {
                 MessageBox.Show("La Cantidad debe ser mayor o igual a 1");
                 return;
@@ -637,7 +650,7 @@ namespace AplicacionBar
 
             ProductosMesa newProducto = new ProductosMesa();
 
-            if (Convert.ToInt32(DataProductos.SelectedRows[0].Cells[0].Value) == null)
+            if (DataProductos.SelectedRows[0].Cells[0].Value == null)
             {
                 MessageBox.Show("Asigancion Erronea");
                 return;
@@ -650,6 +663,7 @@ namespace AplicacionBar
 
 
             AgregarProductoALaMesa(newProducto);
+            txtBoxBuscador.Focus();
         }
 
         private void txtBoxBuscador_TextChanged(object sender, EventArgs e)
@@ -722,6 +736,33 @@ namespace AplicacionBar
         private void DataCompra_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Label_nombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void DataProductos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void DataProductos_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.Handled = true; // Indica que el evento ya fue manejado y no se debe realizar la función por defecto
+                textBoxCantidad.Focus();
+            }
         }
     }
 }

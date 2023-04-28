@@ -274,5 +274,10 @@ namespace AplicacionBar
                 this.Close();
             }
         }
+
+        private void textBox_precio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

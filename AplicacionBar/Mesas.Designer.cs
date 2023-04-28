@@ -103,6 +103,7 @@
             this.btnAgregarMesa.Name = "btnAgregarMesa";
             this.btnAgregarMesa.Size = new System.Drawing.Size(40, 40);
             this.btnAgregarMesa.TabIndex = 1;
+            this.btnAgregarMesa.TabStop = false;
             this.btnAgregarMesa.Text = "+";
             this.btnAgregarMesa.UseVisualStyleBackColor = false;
             this.btnAgregarMesa.Click += new System.EventHandler(this.btnAgregarMesa_Click);
@@ -115,6 +116,7 @@
             this.btnEliminarMesa.Name = "btnEliminarMesa";
             this.btnEliminarMesa.Size = new System.Drawing.Size(40, 40);
             this.btnEliminarMesa.TabIndex = 2;
+            this.btnEliminarMesa.TabStop = false;
             this.btnEliminarMesa.Text = "-";
             this.btnEliminarMesa.UseVisualStyleBackColor = false;
             this.btnEliminarMesa.Click += new System.EventHandler(this.btnEliminarMesa_Click);
@@ -127,6 +129,7 @@
             this.btnAccionesDeMesas.Name = "btnAccionesDeMesas";
             this.btnAccionesDeMesas.Size = new System.Drawing.Size(200, 40);
             this.btnAccionesDeMesas.TabIndex = 3;
+            this.btnAccionesDeMesas.TabStop = false;
             this.btnAccionesDeMesas.Text = "Mesas";
             this.btnAccionesDeMesas.UseVisualStyleBackColor = false;
             this.btnAccionesDeMesas.Click += new System.EventHandler(this.btnAccionesDeMesas_Click);
@@ -186,6 +189,7 @@
             this.btnMesa34.Name = "btnMesa34";
             this.btnMesa34.Size = new System.Drawing.Size(75, 75);
             this.btnMesa34.TabIndex = 35;
+            this.btnMesa34.TabStop = false;
             this.btnMesa34.Text = "34";
             this.btnMesa34.UseVisualStyleBackColor = false;
             this.btnMesa34.Visible = false;
@@ -200,6 +204,7 @@
             this.btnMesa35.Name = "btnMesa35";
             this.btnMesa35.Size = new System.Drawing.Size(75, 75);
             this.btnMesa35.TabIndex = 34;
+            this.btnMesa35.TabStop = false;
             this.btnMesa35.Text = "35";
             this.btnMesa35.UseVisualStyleBackColor = false;
             this.btnMesa35.Visible = false;
@@ -214,6 +219,7 @@
             this.btnMesa36.Name = "btnMesa36";
             this.btnMesa36.Size = new System.Drawing.Size(75, 75);
             this.btnMesa36.TabIndex = 33;
+            this.btnMesa36.TabStop = false;
             this.btnMesa36.Text = "36";
             this.btnMesa36.UseVisualStyleBackColor = false;
             this.btnMesa36.Visible = false;
@@ -228,6 +234,7 @@
             this.btnMesa32.Name = "btnMesa32";
             this.btnMesa32.Size = new System.Drawing.Size(75, 75);
             this.btnMesa32.TabIndex = 32;
+            this.btnMesa32.TabStop = false;
             this.btnMesa32.Text = "32";
             this.btnMesa32.UseVisualStyleBackColor = false;
             this.btnMesa32.Visible = false;
@@ -242,6 +249,7 @@
             this.btnMesa31.Name = "btnMesa31";
             this.btnMesa31.Size = new System.Drawing.Size(75, 75);
             this.btnMesa31.TabIndex = 31;
+            this.btnMesa31.TabStop = false;
             this.btnMesa31.Text = "31";
             this.btnMesa31.UseVisualStyleBackColor = false;
             this.btnMesa31.Visible = false;
@@ -256,6 +264,7 @@
             this.btnMesa33.Name = "btnMesa33";
             this.btnMesa33.Size = new System.Drawing.Size(75, 75);
             this.btnMesa33.TabIndex = 30;
+            this.btnMesa33.TabStop = false;
             this.btnMesa33.Text = "33";
             this.btnMesa33.UseVisualStyleBackColor = false;
             this.btnMesa33.Visible = false;
@@ -270,6 +279,7 @@
             this.btnMesa30.Name = "btnMesa30";
             this.btnMesa30.Size = new System.Drawing.Size(75, 75);
             this.btnMesa30.TabIndex = 29;
+            this.btnMesa30.TabStop = false;
             this.btnMesa30.Text = "30";
             this.btnMesa30.UseVisualStyleBackColor = false;
             this.btnMesa30.Visible = false;
@@ -284,6 +294,7 @@
             this.btnMesa28.Name = "btnMesa28";
             this.btnMesa28.Size = new System.Drawing.Size(75, 75);
             this.btnMesa28.TabIndex = 28;
+            this.btnMesa28.TabStop = false;
             this.btnMesa28.Text = "28";
             this.btnMesa28.UseVisualStyleBackColor = false;
             this.btnMesa28.Visible = false;
@@ -298,6 +309,7 @@
             this.btnMesa29.Name = "btnMesa29";
             this.btnMesa29.Size = new System.Drawing.Size(75, 75);
             this.btnMesa29.TabIndex = 27;
+            this.btnMesa29.TabStop = false;
             this.btnMesa29.Text = "29";
             this.btnMesa29.UseVisualStyleBackColor = false;
             this.btnMesa29.Visible = false;
@@ -312,6 +324,7 @@
             this.btnMesa25.Name = "btnMesa25";
             this.btnMesa25.Size = new System.Drawing.Size(75, 75);
             this.btnMesa25.TabIndex = 26;
+            this.btnMesa25.TabStop = false;
             this.btnMesa25.Text = "25";
             this.btnMesa25.UseVisualStyleBackColor = false;
             this.btnMesa25.Visible = false;
@@ -326,6 +339,7 @@
             this.btnMesa26.Name = "btnMesa26";
             this.btnMesa26.Size = new System.Drawing.Size(75, 75);
             this.btnMesa26.TabIndex = 25;
+            this.btnMesa26.TabStop = false;
             this.btnMesa26.Text = "26";
             this.btnMesa26.UseVisualStyleBackColor = false;
             this.btnMesa26.Visible = false;
@@ -340,6 +354,7 @@
             this.btnMesa27.Name = "btnMesa27";
             this.btnMesa27.Size = new System.Drawing.Size(75, 75);
             this.btnMesa27.TabIndex = 24;
+            this.btnMesa27.TabStop = false;
             this.btnMesa27.Text = "27";
             this.btnMesa27.UseVisualStyleBackColor = false;
             this.btnMesa27.Visible = false;
@@ -354,6 +369,7 @@
             this.btnMesa23.Name = "btnMesa23";
             this.btnMesa23.Size = new System.Drawing.Size(75, 75);
             this.btnMesa23.TabIndex = 23;
+            this.btnMesa23.TabStop = false;
             this.btnMesa23.Text = "23";
             this.btnMesa23.UseVisualStyleBackColor = false;
             this.btnMesa23.Visible = false;
@@ -368,6 +384,7 @@
             this.btnMesa22.Name = "btnMesa22";
             this.btnMesa22.Size = new System.Drawing.Size(75, 75);
             this.btnMesa22.TabIndex = 22;
+            this.btnMesa22.TabStop = false;
             this.btnMesa22.Text = "22";
             this.btnMesa22.UseVisualStyleBackColor = false;
             this.btnMesa22.Visible = false;
@@ -382,6 +399,7 @@
             this.btnMesa24.Name = "btnMesa24";
             this.btnMesa24.Size = new System.Drawing.Size(75, 75);
             this.btnMesa24.TabIndex = 21;
+            this.btnMesa24.TabStop = false;
             this.btnMesa24.Text = "24";
             this.btnMesa24.UseVisualStyleBackColor = false;
             this.btnMesa24.Visible = false;
@@ -396,6 +414,7 @@
             this.btnMesa21.Name = "btnMesa21";
             this.btnMesa21.Size = new System.Drawing.Size(75, 75);
             this.btnMesa21.TabIndex = 20;
+            this.btnMesa21.TabStop = false;
             this.btnMesa21.Text = "21";
             this.btnMesa21.UseVisualStyleBackColor = false;
             this.btnMesa21.Visible = false;
@@ -410,6 +429,7 @@
             this.btnMesa16.Name = "btnMesa16";
             this.btnMesa16.Size = new System.Drawing.Size(75, 75);
             this.btnMesa16.TabIndex = 19;
+            this.btnMesa16.TabStop = false;
             this.btnMesa16.Text = "16";
             this.btnMesa16.UseVisualStyleBackColor = false;
             this.btnMesa16.Visible = false;
@@ -424,6 +444,7 @@
             this.btnMesa19.Name = "btnMesa19";
             this.btnMesa19.Size = new System.Drawing.Size(75, 75);
             this.btnMesa19.TabIndex = 18;
+            this.btnMesa19.TabStop = false;
             this.btnMesa19.Text = "19";
             this.btnMesa19.UseVisualStyleBackColor = false;
             this.btnMesa19.Visible = false;
@@ -438,6 +459,7 @@
             this.btnMesa20.Name = "btnMesa20";
             this.btnMesa20.Size = new System.Drawing.Size(75, 75);
             this.btnMesa20.TabIndex = 17;
+            this.btnMesa20.TabStop = false;
             this.btnMesa20.Text = "20";
             this.btnMesa20.UseVisualStyleBackColor = false;
             this.btnMesa20.Visible = false;
@@ -452,6 +474,7 @@
             this.btnMesa17.Name = "btnMesa17";
             this.btnMesa17.Size = new System.Drawing.Size(75, 75);
             this.btnMesa17.TabIndex = 16;
+            this.btnMesa17.TabStop = false;
             this.btnMesa17.Text = "17";
             this.btnMesa17.UseVisualStyleBackColor = false;
             this.btnMesa17.Visible = false;
@@ -466,6 +489,7 @@
             this.btnMesa18.Name = "btnMesa18";
             this.btnMesa18.Size = new System.Drawing.Size(75, 75);
             this.btnMesa18.TabIndex = 15;
+            this.btnMesa18.TabStop = false;
             this.btnMesa18.Text = "18";
             this.btnMesa18.UseVisualStyleBackColor = false;
             this.btnMesa18.Visible = false;
@@ -480,6 +504,7 @@
             this.btnMesa15.Name = "btnMesa15";
             this.btnMesa15.Size = new System.Drawing.Size(75, 75);
             this.btnMesa15.TabIndex = 14;
+            this.btnMesa15.TabStop = false;
             this.btnMesa15.Text = "15";
             this.btnMesa15.UseVisualStyleBackColor = false;
             this.btnMesa15.Visible = false;
@@ -494,6 +519,7 @@
             this.btnMesa14.Name = "btnMesa14";
             this.btnMesa14.Size = new System.Drawing.Size(75, 75);
             this.btnMesa14.TabIndex = 13;
+            this.btnMesa14.TabStop = false;
             this.btnMesa14.Text = "14";
             this.btnMesa14.UseVisualStyleBackColor = false;
             this.btnMesa14.Visible = false;
@@ -508,6 +534,7 @@
             this.btnMesa13.Name = "btnMesa13";
             this.btnMesa13.Size = new System.Drawing.Size(75, 75);
             this.btnMesa13.TabIndex = 12;
+            this.btnMesa13.TabStop = false;
             this.btnMesa13.Text = "13";
             this.btnMesa13.UseVisualStyleBackColor = false;
             this.btnMesa13.Visible = false;
@@ -522,6 +549,7 @@
             this.btnMesa11.Name = "btnMesa11";
             this.btnMesa11.Size = new System.Drawing.Size(75, 75);
             this.btnMesa11.TabIndex = 11;
+            this.btnMesa11.TabStop = false;
             this.btnMesa11.Text = "11";
             this.btnMesa11.UseVisualStyleBackColor = false;
             this.btnMesa11.Visible = false;
@@ -536,6 +564,7 @@
             this.btnMesa12.Name = "btnMesa12";
             this.btnMesa12.Size = new System.Drawing.Size(75, 75);
             this.btnMesa12.TabIndex = 10;
+            this.btnMesa12.TabStop = false;
             this.btnMesa12.Text = "12";
             this.btnMesa12.UseVisualStyleBackColor = false;
             this.btnMesa12.Visible = false;
@@ -550,6 +579,7 @@
             this.btnMesa10.Name = "btnMesa10";
             this.btnMesa10.Size = new System.Drawing.Size(75, 75);
             this.btnMesa10.TabIndex = 9;
+            this.btnMesa10.TabStop = false;
             this.btnMesa10.Text = "10";
             this.btnMesa10.UseVisualStyleBackColor = false;
             this.btnMesa10.Visible = false;
@@ -564,6 +594,7 @@
             this.btnMesa9.Name = "btnMesa9";
             this.btnMesa9.Size = new System.Drawing.Size(75, 75);
             this.btnMesa9.TabIndex = 8;
+            this.btnMesa9.TabStop = false;
             this.btnMesa9.Text = "9";
             this.btnMesa9.UseVisualStyleBackColor = false;
             this.btnMesa9.Visible = false;
@@ -578,6 +609,7 @@
             this.btnMesa8.Name = "btnMesa8";
             this.btnMesa8.Size = new System.Drawing.Size(75, 75);
             this.btnMesa8.TabIndex = 7;
+            this.btnMesa8.TabStop = false;
             this.btnMesa8.Text = "8";
             this.btnMesa8.UseVisualStyleBackColor = false;
             this.btnMesa8.Visible = false;
@@ -592,6 +624,7 @@
             this.btnMesa7.Name = "btnMesa7";
             this.btnMesa7.Size = new System.Drawing.Size(75, 75);
             this.btnMesa7.TabIndex = 6;
+            this.btnMesa7.TabStop = false;
             this.btnMesa7.Text = "7";
             this.btnMesa7.UseVisualStyleBackColor = false;
             this.btnMesa7.Visible = false;
@@ -606,6 +639,7 @@
             this.btnMesa6.Name = "btnMesa6";
             this.btnMesa6.Size = new System.Drawing.Size(75, 75);
             this.btnMesa6.TabIndex = 5;
+            this.btnMesa6.TabStop = false;
             this.btnMesa6.Text = "6";
             this.btnMesa6.UseVisualStyleBackColor = false;
             this.btnMesa6.Visible = false;
@@ -620,6 +654,7 @@
             this.btnMesa4.Name = "btnMesa4";
             this.btnMesa4.Size = new System.Drawing.Size(75, 75);
             this.btnMesa4.TabIndex = 4;
+            this.btnMesa4.TabStop = false;
             this.btnMesa4.Text = "4";
             this.btnMesa4.UseVisualStyleBackColor = false;
             this.btnMesa4.Visible = false;
@@ -634,6 +669,7 @@
             this.btnMesa5.Name = "btnMesa5";
             this.btnMesa5.Size = new System.Drawing.Size(75, 75);
             this.btnMesa5.TabIndex = 3;
+            this.btnMesa5.TabStop = false;
             this.btnMesa5.Text = "5";
             this.btnMesa5.UseVisualStyleBackColor = false;
             this.btnMesa5.Visible = false;
@@ -648,6 +684,7 @@
             this.btnMesa3.Name = "btnMesa3";
             this.btnMesa3.Size = new System.Drawing.Size(75, 75);
             this.btnMesa3.TabIndex = 2;
+            this.btnMesa3.TabStop = false;
             this.btnMesa3.Text = "3";
             this.btnMesa3.UseVisualStyleBackColor = false;
             this.btnMesa3.Visible = false;
@@ -662,6 +699,7 @@
             this.btnMesa2.Name = "btnMesa2";
             this.btnMesa2.Size = new System.Drawing.Size(75, 75);
             this.btnMesa2.TabIndex = 1;
+            this.btnMesa2.TabStop = false;
             this.btnMesa2.Text = "2";
             this.btnMesa2.UseVisualStyleBackColor = false;
             this.btnMesa2.Visible = false;
@@ -676,6 +714,7 @@
             this.btnMesa1.Name = "btnMesa1";
             this.btnMesa1.Size = new System.Drawing.Size(75, 75);
             this.btnMesa1.TabIndex = 0;
+            this.btnMesa1.TabStop = false;
             this.btnMesa1.Text = "1";
             this.btnMesa1.UseVisualStyleBackColor = false;
             this.btnMesa1.Visible = false;
@@ -718,6 +757,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(125, 32);
             this.panel3.TabIndex = 2;
+            this.panel3.Visible = false;
             // 
             // Label_nombre
             // 
@@ -729,6 +769,8 @@
             this.Label_nombre.Size = new System.Drawing.Size(81, 25);
             this.Label_nombre.TabIndex = 1;
             this.Label_nombre.Text = "Nombre";
+            this.Label_nombre.Visible = false;
+            this.Label_nombre.Click += new System.EventHandler(this.Label_nombre_Click);
             // 
             // panel2
             // 
@@ -761,7 +803,9 @@
             this.DataProductos.Name = "DataProductos";
             this.DataProductos.ReadOnly = true;
             this.DataProductos.Size = new System.Drawing.Size(831, 116);
-            this.DataProductos.TabIndex = 8;
+            this.DataProductos.TabIndex = 2;
+            this.DataProductos.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataProductos_KeyDown);
+            this.DataProductos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DataProductos_KeyPress);
             // 
             // DataCompra
             // 
@@ -772,6 +816,7 @@
             this.DataCompra.ReadOnly = true;
             this.DataCompra.Size = new System.Drawing.Size(831, 211);
             this.DataCompra.TabIndex = 7;
+            this.DataCompra.TabStop = false;
             this.DataCompra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataCompra_CellClick);
             this.DataCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataCompra_CellContentClick);
             this.DataCompra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.DataCompra_KeyDown);
@@ -783,7 +828,7 @@
             this.btn_Agregar.Location = new System.Drawing.Point(732, 183);
             this.btn_Agregar.Name = "btn_Agregar";
             this.btn_Agregar.Size = new System.Drawing.Size(112, 28);
-            this.btn_Agregar.TabIndex = 6;
+            this.btn_Agregar.TabIndex = 4;
             this.btn_Agregar.Text = "Agregar";
             this.btn_Agregar.UseVisualStyleBackColor = false;
             this.btn_Agregar.Click += new System.EventHandler(this.button1_Click_1);
@@ -795,10 +840,11 @@
             this.textBoxCantidad.Multiline = true;
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(101, 28);
-            this.textBoxCantidad.TabIndex = 2;
+            this.textBoxCantidad.TabIndex = 3;
             this.textBoxCantidad.Tag = "";
             this.textBoxCantidad.Text = "1";
             this.textBoxCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCantidad_KeyPress);
             // 
             // txtBoxBuscador
             // 
@@ -807,7 +853,7 @@
             this.txtBoxBuscador.Multiline = true;
             this.txtBoxBuscador.Name = "txtBoxBuscador";
             this.txtBoxBuscador.Size = new System.Drawing.Size(831, 36);
-            this.txtBoxBuscador.TabIndex = 0;
+            this.txtBoxBuscador.TabIndex = 1;
             this.txtBoxBuscador.TextChanged += new System.EventHandler(this.txtBoxBuscador_TextChanged);
             // 
             // btnLimpiarVenta
@@ -819,6 +865,7 @@
             this.btnLimpiarVenta.Name = "btnLimpiarVenta";
             this.btnLimpiarVenta.Size = new System.Drawing.Size(125, 37);
             this.btnLimpiarVenta.TabIndex = 4;
+            this.btnLimpiarVenta.TabStop = false;
             this.btnLimpiarVenta.Text = "Limpiar";
             this.btnLimpiarVenta.UseVisualStyleBackColor = false;
             this.btnLimpiarVenta.Click += new System.EventHandler(this.btnLimpiarVenta_Click);
@@ -831,6 +878,7 @@
             this.btnCerrarVenta.Name = "btnCerrarVenta";
             this.btnCerrarVenta.Size = new System.Drawing.Size(125, 37);
             this.btnCerrarVenta.TabIndex = 3;
+            this.btnCerrarVenta.TabStop = false;
             this.btnCerrarVenta.Text = "Cerrar Venta";
             this.btnCerrarVenta.UseVisualStyleBackColor = false;
             this.btnCerrarVenta.Click += new System.EventHandler(this.button2_Click);
@@ -844,6 +892,7 @@
             this.btnTicket.Name = "btnTicket";
             this.btnTicket.Size = new System.Drawing.Size(125, 37);
             this.btnTicket.TabIndex = 2;
+            this.btnTicket.TabStop = false;
             this.btnTicket.Text = "Ticket";
             this.btnTicket.UseVisualStyleBackColor = false;
             this.btnTicket.Visible = false;

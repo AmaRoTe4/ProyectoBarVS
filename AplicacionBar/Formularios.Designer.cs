@@ -51,8 +51,9 @@
             this.textBox_precio.Location = new System.Drawing.Point(274, 192);
             this.textBox_precio.Name = "textBox_precio";
             this.textBox_precio.Size = new System.Drawing.Size(257, 24);
-            this.textBox_precio.TabIndex = 1;
+            this.textBox_precio.TabIndex = 2;
             this.textBox_precio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_precio.TextChanged += new System.EventHandler(this.textBox_precio_TextChanged);
             this.textBox_precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_precio_KeyPress);
             // 
             // cmbBoxClass
@@ -65,7 +66,7 @@
             this.cmbBoxClass.Location = new System.Drawing.Point(274, 253);
             this.cmbBoxClass.Name = "cmbBoxClass";
             this.cmbBoxClass.Size = new System.Drawing.Size(257, 33);
-            this.cmbBoxClass.TabIndex = 2;
+            this.cmbBoxClass.TabIndex = 3;
             // 
             // label1
             // 
@@ -113,7 +114,7 @@
             this.textBox_nombre.Location = new System.Drawing.Point(274, 131);
             this.textBox_nombre.Name = "textBox_nombre";
             this.textBox_nombre.Size = new System.Drawing.Size(257, 24);
-            this.textBox_nombre.TabIndex = 6;
+            this.textBox_nombre.TabIndex = 1;
             // 
             // btn_funcion
             // 
@@ -123,7 +124,7 @@
             this.btn_funcion.Location = new System.Drawing.Point(315, 311);
             this.btn_funcion.Name = "btn_funcion";
             this.btn_funcion.Size = new System.Drawing.Size(174, 49);
-            this.btn_funcion.TabIndex = 7;
+            this.btn_funcion.TabIndex = 4;
             this.btn_funcion.Text = "Agregar";
             this.btn_funcion.UseVisualStyleBackColor = false;
             this.btn_funcion.Click += new System.EventHandler(this.btn_funcion_Click);
